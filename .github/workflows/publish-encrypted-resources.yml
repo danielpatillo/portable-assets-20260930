@@ -1,0 +1,90 @@
+name: Publish encrypted portable resources
+
+on:
+  push:
+    branches: [main]
+    paths: ['publication/v0.0.7/manifest.json']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: encrypted-portable-release
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Fetch the exact public revision
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 --single-branch --branch main "https://github.com/${GITHUB_REPOSITORY}.git" input
+          git -C input fetch --depth 1 origin "$GITHUB_SHA"
+          git -C input checkout --detach "$GITHUB_SHA"
+      - name: Verify and publish encrypted resources
+        shell: python
+        run: |
+          import hashlib, json, os, pathlib, re, shutil, subprocess, tempfile, time
+          repo = os.environ["GITHUB_REPOSITORY"]
+          root = pathlib.Path("input").resolve()
+          manifest = json.loads((root / "publication/v0.0.7/manifest.json").read_text())
+          assert manifest["tag"] == "v1.0.0"
+          assets = manifest["assets"]
+          expected = {"launcher-resource-v0.0.7.zip"} | {f"portable-engine-v2-{n:02d}.zip" for n in range(1, 9)}
+          assert len(assets) == 9 and {a["name"] for a in assets} == expected
+          out = pathlib.Path("verified-assets")
+          out.mkdir(exist_ok=True)
+          def digest(path):
+              h = hashlib.sha256()
+              with path.open("rb") as f:
+                  for b in iter(lambda: f.read(4*1024*1024), b""):
+                      h.update(b)
+              return h.hexdigest()
+          for asset in assets:
+              assert re.fullmatch(r"[0-9a-f]{64}", asset["sha256"])
+              target = out / asset["name"]
+              with target.open("wb") as dest:
+                  for chunk in asset["chunks"]:
+                      source = (root / chunk["path"]).resolve()
+                      assert source.is_relative_to(root / "publication/v0.0.7/chunks")
+                      assert source.stat().st_size == chunk["bytes"]
+                      assert digest(source) == chunk["sha256"]
+                      with source.open("rb") as src:
+                          shutil.copyfileobj(src, dest, 4*1024*1024)
+              assert target.stat().st_size == asset["bytes"]
+              assert digest(target) == asset["sha256"]
+          release = json.loads(subprocess.check_output(["gh", "api", f"repos/{repo}/releases/tags/v1.0.0"]))
+          assert release["draft"] is False
+          existing = {a["name"]: a for a in release["assets"]}
+          for asset in assets:
+              name = asset["name"]
+              if name in existing:
+                  with tempfile.TemporaryDirectory() as td:
+                      subprocess.run(["gh", "release", "download", "v1.0.0", "--repo", repo, "--pattern", name, "--dir", td], check=True)
+                      assert digest(pathlib.Path(td) / name) == asset["sha256"], f"Existing asset differs: {name}"
+                  print(f"Already verified: {name}", flush=True)
+                  continue
+              command = ["gh", "release", "upload", "v1.0.0", str(out/name), "--repo", repo]
+              for attempt in range(3):
+                  result = subprocess.run(command)
+                  if result.returncode == 0:
+                      break
+                  if attempt == 2:
+                      raise RuntimeError(f"Upload failed: {name}")
+                  time.sleep(5 * (attempt + 1))
+              print(f"Published: {name}", flush=True)
+          final = json.loads(subprocess.check_output(["gh", "api", f"repos/{repo}/releases/tags/v1.0.0"]))
+          published = {a["name"]: a for a in final["assets"]}
+          for asset in assets:
+              assert asset["name"] in published
+              remote = published[asset["name"]]
+              assert remote["size"] == asset["bytes"]
+              if remote.get("digest"):
+                  assert remote["digest"] == "sha256:" + asset["sha256"]
+          print("Verified all nine encrypted release resources.", flush=True)
