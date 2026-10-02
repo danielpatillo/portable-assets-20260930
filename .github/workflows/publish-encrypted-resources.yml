@@ -71,6 +71,16 @@ jobs:
               assert remote.get("digest") == original["digest"]
           for asset in assets:
               name = asset["name"]
+              # Only the unpublished v009 candidate may be replaced after its
+              # exact previous cipher hash is verified. Ten older assets stay.
+              if name == "launcher-resource-v0.0.9.zip" and name in existing and existing[name].get("digest") != "sha256:" + asset["sha256"]:
+                  previous = manifest["superseded_candidate"]
+                  remote = existing[name]
+                  assert previous["name"] == name
+                  assert remote["size"] == previous["bytes"]
+                  assert remote.get("digest") == "sha256:" + previous["sha256"]
+                  subprocess.run(["gh", "api", "--method", "DELETE", f"repos/{repo}/releases/assets/{remote['id']}"], check=True)
+                  del existing[name]
               if name in existing:
                   with tempfile.TemporaryDirectory() as td:
                       subprocess.run(["gh", "release", "download", "v1.0.0", "--repo", repo, "--pattern", name, "--dir", td], check=True)

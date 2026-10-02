@@ -77,28 +77,28 @@
   "assets": [
     {
       "name": "launcher-resource-v0.0.9.zip",
-      "bytes": 27853236,
-      "sha256": "1ff027ccd00b69ffc678a26687b43a87aa215cbec1d8003e30d235526dc324a5",
+      "bytes": 27852964,
+      "sha256": "6418a48c11fd80a6bcad42307137164a922d304f66473af8cf055fe296313fa6",
       "chunks": [
         {
           "path": "publication/v0.0.9/chunks/launcher-resource-v0.0.9.zip.001.bin",
           "bytes": 8388608,
-          "sha256": "95c7fc124c774c1dcb5db9a22fc9702198de8e9c44ccd0da83e10b556dc6a503"
+          "sha256": "ecc23fc0bbed9951d52ef99e467e115170ec2d235dd9bdbfffaea29edf70ac2a"
         },
         {
           "path": "publication/v0.0.9/chunks/launcher-resource-v0.0.9.zip.002.bin",
           "bytes": 8388608,
-          "sha256": "327d14713921ca4ea33250f59373a863bbb921d9bdbeb6304cc71fe34fb2a663"
+          "sha256": "e9b96de36915d43907fe3199783d23b640d120b5bdd30f648badcb691f2a620e"
         },
         {
           "path": "publication/v0.0.9/chunks/launcher-resource-v0.0.9.zip.003.bin",
           "bytes": 8388608,
-          "sha256": "eda07fce3463529a2a0f782b86c7e1e745f8dac1d2171963c0e171c492db946a"
+          "sha256": "018e934af86a919e929be368ba5be621f684f03d001f3bf81975443739762a51"
         },
         {
           "path": "publication/v0.0.9/chunks/launcher-resource-v0.0.9.zip.004.bin",
-          "bytes": 2687412,
-          "sha256": "3c23bd6c6255c56dcdf8d8c757651db5d17367a4a3835fe6aaa4c717237de32a"
+          "bytes": 2687140,
+          "sha256": "d8cdbc774948f0fa8d619bfc74baa9adf38b7b94769af1d0ab930fa8a4cf2ec3"
         }
       ]
     },
@@ -573,5 +573,10 @@
         }
       ]
     }
-  ]
+  ],
+  "superseded_candidate": {
+    "name": "launcher-resource-v0.0.9.zip",
+    "bytes": 27853236,
+    "sha256": "1ff027ccd00b69ffc678a26687b43a87aa215cbec1d8003e30d235526dc324a5"
+  }
 }
