@@ -1,0 +1,598 @@
+{
+  "schema": 1,
+  "version": "0.0.12",
+  "tag": "v1.0.0",
+  "preserved_assets": [
+    {
+      "name": "launcher-resource-v0.0.10.zip",
+      "id": 606683898,
+      "bytes": 35360678,
+      "digest": "sha256:38484968f1bcae8e94dfa50cae1fbd92ab15f4f204b3756172d83114f009180e",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.10.zip"
+    },
+    {
+      "name": "launcher-resource-v0.0.11.zip",
+      "id": 607030323,
+      "bytes": 53877622,
+      "digest": "sha256:edd89248fa9b900760490f18fa50a2d26ccd2056c46c1750b0a7887b312d0f8c",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.11.zip"
+    },
+    {
+      "name": "launcher-resource-v0.0.7.zip",
+      "id": 605835224,
+      "bytes": 27812148,
+      "digest": "sha256:3e3d85da2a5289e45c2aee97c85c9fc9f7832c190de23194c4dca9ae57c3f7d4",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.7.zip"
+    },
+    {
+      "name": "launcher-resource-v0.0.8.zip",
+      "id": 606266376,
+      "bytes": 27823444,
+      "digest": "sha256:e4f35696ed8a2ff3ff234085b38c6a60120691542da910a694be82e5ba797930",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.8.zip"
+    },
+    {
+      "name": "launcher-resource-v0.0.9.zip",
+      "id": 606474311,
+      "bytes": 27852964,
+      "digest": "sha256:6418a48c11fd80a6bcad42307137164a922d304f66473af8cf055fe296313fa6",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.9.zip"
+    },
+    {
+      "name": "portable-engine-v2-01.zip",
+      "id": 605835296,
+      "bytes": 90000126,
+      "digest": "sha256:54e85c25cf9a778876b4abf3ddc1b6eaeb749313ae2392f0fa99a558c19b4de7",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-01.zip"
+    },
+    {
+      "name": "portable-engine-v2-02.zip",
+      "id": 605835415,
+      "bytes": 90000126,
+      "digest": "sha256:bb5128dbdfe1c5fb3768a70773d885aee25bf0393e4907df7246f6d66f3f81f1",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-02.zip"
+    },
+    {
+      "name": "portable-engine-v2-03.zip",
+      "id": 605835570,
+      "bytes": 90000126,
+      "digest": "sha256:41eb5b925d6363cbe5492180f0f6984764553e70fbcd5ffbb7774d0e7af015a1",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-03.zip"
+    },
+    {
+      "name": "portable-engine-v2-04.zip",
+      "id": 605835693,
+      "bytes": 90000126,
+      "digest": "sha256:01a4707850b1174428f0ed712c5e61963a9600ba01a5890752c37ace68d51ab6",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-04.zip"
+    },
+    {
+      "name": "portable-engine-v2-05.zip",
+      "id": 605835847,
+      "bytes": 90000126,
+      "digest": "sha256:50f9674e652b9931407def0914ae8591c7ec88318fc81c00cb429374929b7751",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-05.zip"
+    },
+    {
+      "name": "portable-engine-v2-06.zip",
+      "id": 605835965,
+      "bytes": 90000126,
+      "digest": "sha256:e977b89ad11ba20464a3b03a50567c7e8bf8d70921961ab820c98562a562878b",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-06.zip"
+    },
+    {
+      "name": "portable-engine-v2-07.zip",
+      "id": 605836090,
+      "bytes": 90000126,
+      "digest": "sha256:fe10384de13ac90ff5ad2038738d700a7101d9487e7cacecb0b4325787f5acca",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-07.zip"
+    },
+    {
+      "name": "portable-engine-v2-08.zip",
+      "id": 605836185,
+      "bytes": 48655987,
+      "digest": "sha256:e16a6fb03279286684bf48a774e2f39ad8dadcf288cdc14aacd1fe0746442045",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-08.zip"
+    }
+  ],
+  "assets": [
+    {
+      "name": "launcher-resource-v0.0.12.zip",
+      "bytes": 27855046,
+      "sha256": "8f5873e8fe566ff401da76ecfc3fd9fa7e679e3485bf98dfe79c713fa3593b74",
+      "chunks": [
+        {
+          "path": "publication/v0.0.12/chunks/launcher-resource-v0.0.12.zip.001.bin",
+          "bytes": 8388608,
+          "sha256": "1e7c41a06dfbcda1e49e63ebb4eeafc87b42b91dccf877462adf5d67f230ef65"
+        },
+        {
+          "path": "publication/v0.0.12/chunks/launcher-resource-v0.0.12.zip.002.bin",
+          "bytes": 8388608,
+          "sha256": "27077f682f3eb8dc3f2d36ff1a75b37efcb7b4becb0183139109e2e764a5e802"
+        },
+        {
+          "path": "publication/v0.0.12/chunks/launcher-resource-v0.0.12.zip.003.bin",
+          "bytes": 8388608,
+          "sha256": "975de5d1d9a981e25dce51457742eda06181f8aee0a77cbaa004984676cca01d"
+        },
+        {
+          "path": "publication/v0.0.12/chunks/launcher-resource-v0.0.12.zip.004.bin",
+          "bytes": 2689222,
+          "sha256": "75a185b94a46797577d7a8dc07b3b5b43cf040b0904fa144d6d2b005f52c74af"
+        }
+      ]
+    },
+    {
+      "name": "portable-engine-v2-01.zip",
+      "bytes": 90000126,
+      "sha256": "54e85c25cf9a778876b4abf3ddc1b6eaeb749313ae2392f0fa99a558c19b4de7",
+      "chunks": [
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-01.zip/000.bin",
+          "bytes": 8388608,
+          "sha256": "8868fe8f4ca8ad8cd6fb1d73e1b8da8d57779681d33fbd12d5ce2fca282c072e"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-01.zip/001.bin",
+          "bytes": 8388608,
+          "sha256": "7a2e9078379d66464209c37be5ff51e8142682871cfd49ca37f226fc5beee807"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-01.zip/002.bin",
+          "bytes": 8388608,
+          "sha256": "93b12d3f115d8c2844924a2e9b0494e8cc25df10a54648ef34e405bb22d3ba18"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-01.zip/003.bin",
+          "bytes": 8388608,
+          "sha256": "caa638ade055f4d5306509aab6801d47a1821b1ec1aad8a679da19f4e770290e"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-01.zip/004.bin",
+          "bytes": 8388608,
+          "sha256": "dc15f1f75326f54ee4254453949fdaba2d94cfe55c768ebc9a118708466ea873"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-01.zip/005.bin",
+          "bytes": 8388608,
+          "sha256": "2190121b37286cd33f0c8ce0ea218e8c1e2b558be5bf59289a4d9d3a4482c4d7"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-01.zip/006.bin",
+          "bytes": 8388608,
+          "sha256": "4de45529e36f31609f04e2253c5cd7b5fcf08664391be023d1e3f3c754212a3b"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-01.zip/007.bin",
+          "bytes": 8388608,
+          "sha256": "b5676f384c7c34e35ee4cd0812914fee228241ea338aad30ebd5bdd544030f71"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-01.zip/008.bin",
+          "bytes": 8388608,
+          "sha256": "683937791330359dd1227728513b667325b5d32248a303f5111a3f56c2bfc373"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-01.zip/009.bin",
+          "bytes": 8388608,
+          "sha256": "dfdb4ae67965a6dd604118a9873ce52a08ac8ce354943819d7dcb51fc88e7cf6"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-01.zip/010.bin",
+          "bytes": 6114046,
+          "sha256": "91b369734c36ae7278e12885bf65d2cc662a91ef5f07e9318581169c9ba642ad"
+        }
+      ]
+    },
+    {
+      "name": "portable-engine-v2-02.zip",
+      "bytes": 90000126,
+      "sha256": "bb5128dbdfe1c5fb3768a70773d885aee25bf0393e4907df7246f6d66f3f81f1",
+      "chunks": [
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-02.zip/000.bin",
+          "bytes": 8388608,
+          "sha256": "557046251dfea3ad0bd3eedce3a0d4641062bb65079457116a6612131313b4a8"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-02.zip/001.bin",
+          "bytes": 8388608,
+          "sha256": "2f10a5fc726de6c5de87c6e1b3605cdadf3cac2d44e1a4db6e210db5100ae653"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-02.zip/002.bin",
+          "bytes": 8388608,
+          "sha256": "24b3c2a6808b7283c6cbbfb8c1800381fddad90c17612016db7bb81c1ce851c6"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-02.zip/003.bin",
+          "bytes": 8388608,
+          "sha256": "e3485e7a1d60204ba14b497278cf73260644732dbb27328a0ab4d999f75e87e9"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-02.zip/004.bin",
+          "bytes": 8388608,
+          "sha256": "7fa2d19450d8eb93d9282114069e1238077340c2134fa3bac4e3233559bba6d7"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-02.zip/005.bin",
+          "bytes": 8388608,
+          "sha256": "008a3a23c936d43a9b0519c463ecb19f3439e704829b6fb2e1b9bcd3ab431691"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-02.zip/006.bin",
+          "bytes": 8388608,
+          "sha256": "1d96e4e04f8052f5685c0c201db148ee1aebd93d1d99bd927e98fe795004abdd"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-02.zip/007.bin",
+          "bytes": 8388608,
+          "sha256": "126741c96c39937e7ffc8cbfb64d1271e05779a45f1613bdda2e9b6432224183"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-02.zip/008.bin",
+          "bytes": 8388608,
+          "sha256": "c514a15abf8f412cd3e63012ba85f0ec1ca8fd4979b3fc43a07f7c3e50201c9b"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-02.zip/009.bin",
+          "bytes": 8388608,
+          "sha256": "43dcb6383e8def6f4cad5b6825b70c9e8d469dee7f420d91d412b527d89abd56"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-02.zip/010.bin",
+          "bytes": 6114046,
+          "sha256": "94069bbc1e268b652a5f650e3a5528dfa1149c1675369732664d86fdfdc19b86"
+        }
+      ]
+    },
+    {
+      "name": "portable-engine-v2-03.zip",
+      "bytes": 90000126,
+      "sha256": "41eb5b925d6363cbe5492180f0f6984764553e70fbcd5ffbb7774d0e7af015a1",
+      "chunks": [
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-03.zip/000.bin",
+          "bytes": 8388608,
+          "sha256": "4b291606b1385feb150c287b5397eca31ccf5185c3171c6c3f9968e903f58c9e"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-03.zip/001.bin",
+          "bytes": 8388608,
+          "sha256": "9f44ad7eefa88f9f6cdf6d429e03034cfabc9798b65d93d1653a335ff7834b0e"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-03.zip/002.bin",
+          "bytes": 8388608,
+          "sha256": "49daefd256bb5fffd58f8bc0a6b574fd3abafb1fd55819989c5400bbd2e1ccfb"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-03.zip/003.bin",
+          "bytes": 8388608,
+          "sha256": "f1f86ad744748d91aba16f2797b9ef04f2e56110045fbce959e5833e813773bc"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-03.zip/004.bin",
+          "bytes": 8388608,
+          "sha256": "399f12aa540cda0d5c11ac72ece97d14bb7aa121dee6819d56c0e75698b2eb08"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-03.zip/005.bin",
+          "bytes": 8388608,
+          "sha256": "252118c9d74a01880cf9464f4a9f713b9844620e049202753c745b38b17ef5fe"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-03.zip/006.bin",
+          "bytes": 8388608,
+          "sha256": "07158c7218f46cd8859d81a25e6e9815d9613be76b5122dcfde9960b8344ac9c"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-03.zip/007.bin",
+          "bytes": 8388608,
+          "sha256": "af3e11f08c0c18bdd395bcb4ba03249f656aea2f522de5fde3779325070fef13"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-03.zip/008.bin",
+          "bytes": 8388608,
+          "sha256": "01c5b3164243db6235d5bae3e5b38596ee8cd60540257104b0ed83b9b159b2dd"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-03.zip/009.bin",
+          "bytes": 8388608,
+          "sha256": "c1979030c63ee38c9e5a28bbdc80b65799a2177142c07ca4410884dec309ea1e"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-03.zip/010.bin",
+          "bytes": 6114046,
+          "sha256": "317af750b7fc3dc74387fdedac4694f78cf86de42e223c565cdfbaac802842be"
+        }
+      ]
+    },
+    {
+      "name": "portable-engine-v2-04.zip",
+      "bytes": 90000126,
+      "sha256": "01a4707850b1174428f0ed712c5e61963a9600ba01a5890752c37ace68d51ab6",
+      "chunks": [
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-04.zip/000.bin",
+          "bytes": 8388608,
+          "sha256": "eb2f88e3b43aab6e83ecb529b49e088bba8e0e23790de4b717becde3bb2af83c"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-04.zip/001.bin",
+          "bytes": 8388608,
+          "sha256": "ea95442d715874473fefcd1ee655d2b9e34e471290bacf729cc52556d634835b"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-04.zip/002.bin",
+          "bytes": 8388608,
+          "sha256": "5a3348f9f81de3a912cefb95c4bffa8691daf2b184986c8300bf1fd03107ae13"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-04.zip/003.bin",
+          "bytes": 8388608,
+          "sha256": "d7af3182945f8fe0ba2fb38d3f7365df366e0a677e4e53c822070441b2775fd1"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-04.zip/004.bin",
+          "bytes": 8388608,
+          "sha256": "9fb184e9e893852b2250db89871921860e0e6dd583844aaf6de66ea532398650"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-04.zip/005.bin",
+          "bytes": 8388608,
+          "sha256": "780a3f5a1bacdedb51f4d07558eedbb7eb198bfbff2a9c0e539511c7a3089a62"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-04.zip/006.bin",
+          "bytes": 8388608,
+          "sha256": "f016e302baeac177cc31565b63ec04307b0767f9f25356ca9013d09c0d5fe66e"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-04.zip/007.bin",
+          "bytes": 8388608,
+          "sha256": "496dc8cf04d5b541511c2a0cade9a2da9832c12c6d5abe689f73ad41be896fb7"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-04.zip/008.bin",
+          "bytes": 8388608,
+          "sha256": "0f3407a2ce1443eeda1c39b499be3b449e01d29f4956eace8cad1255692618a0"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-04.zip/009.bin",
+          "bytes": 8388608,
+          "sha256": "c07af3149550833746a98009e0fa250d7d6797bbffd3a757030add9b687b12b6"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-04.zip/010.bin",
+          "bytes": 6114046,
+          "sha256": "9032b62553fae5664978fb5e34b70518166bcf321131e9031272d2abe910e800"
+        }
+      ]
+    },
+    {
+      "name": "portable-engine-v2-05.zip",
+      "bytes": 90000126,
+      "sha256": "50f9674e652b9931407def0914ae8591c7ec88318fc81c00cb429374929b7751",
+      "chunks": [
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-05.zip/000.bin",
+          "bytes": 8388608,
+          "sha256": "7b076d4ff77902381a6fadd35625621f11f6e0b11968bf981592f3c8c90cad27"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-05.zip/001.bin",
+          "bytes": 8388608,
+          "sha256": "3c163fabd22ff1fc8abb58fbe481d753999a7dffd857061bc78c30d5671cde08"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-05.zip/002.bin",
+          "bytes": 8388608,
+          "sha256": "74a7de695a3968c13295b887a8ae60141885d5d7dfcd3288699b7c4fc06e70e0"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-05.zip/003.bin",
+          "bytes": 8388608,
+          "sha256": "fb7dcacdef0895660951e7928f2183d892ddfebf77fc9c52a5e5f686921094d2"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-05.zip/004.bin",
+          "bytes": 8388608,
+          "sha256": "6ee2d439678108a769a26dfb5a5b95e947f9feaec638339b16a4493569a69fc5"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-05.zip/005.bin",
+          "bytes": 8388608,
+          "sha256": "b5d8ccc5f362600a62b4aadf02813443663f223b67a311585fe50c9911f0b8fb"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-05.zip/006.bin",
+          "bytes": 8388608,
+          "sha256": "ca3003e72b3fd1c4a1fa9f1e960986c4ad4aa613f926ec53ddf2ffee058dcf38"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-05.zip/007.bin",
+          "bytes": 8388608,
+          "sha256": "a7ea527e82f931fb5a93590ca5ce4b5203f18a93ef7aa7be6c00d13447052f8f"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-05.zip/008.bin",
+          "bytes": 8388608,
+          "sha256": "389e7a2667d187cf74824da2e9bb2acc170647771fc260026dec801d7d24c468"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-05.zip/009.bin",
+          "bytes": 8388608,
+          "sha256": "df5740d488f26bf8cb6ec2c6b5db8541e15d24ba0586304afa9bf147cd9b4bdb"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-05.zip/010.bin",
+          "bytes": 6114046,
+          "sha256": "b931d4d73178e89cb067ddeab3f3a5acbb10d67885448945abebaff3aeb0639b"
+        }
+      ]
+    },
+    {
+      "name": "portable-engine-v2-06.zip",
+      "bytes": 90000126,
+      "sha256": "e977b89ad11ba20464a3b03a50567c7e8bf8d70921961ab820c98562a562878b",
+      "chunks": [
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-06.zip/000.bin",
+          "bytes": 8388608,
+          "sha256": "22363d03b98e3751e9816a5c42f340dfb90fa1eadbdef057035a8783537cc340"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-06.zip/001.bin",
+          "bytes": 8388608,
+          "sha256": "d5d207efa2a35ff7674391b45773d1002b8c31df098ce49e06cafa005f6212ae"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-06.zip/002.bin",
+          "bytes": 8388608,
+          "sha256": "547f10eb2dbad416fffeea183cd631349edacd17bd0b93f9fca7c3ed828f12db"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-06.zip/003.bin",
+          "bytes": 8388608,
+          "sha256": "9f3ab20cd83f4b840a744f4625bd8bee2b7f043ef35721ccaa56a0dcced95141"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-06.zip/004.bin",
+          "bytes": 8388608,
+          "sha256": "2c3d61701cc637cf099c871d68d4e29b64b6a0eb55f109267ecfa41cc85f9040"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-06.zip/005.bin",
+          "bytes": 8388608,
+          "sha256": "2a873d585796ab4d88a434645a618b47290d1d203715f2b0273497ee88c7821f"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-06.zip/006.bin",
+          "bytes": 8388608,
+          "sha256": "bfbe7e907c598c9d90122ec03d6acef5edf19d478c3fea6eea54ba6b91d2401e"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-06.zip/007.bin",
+          "bytes": 8388608,
+          "sha256": "72e87d8e72d04f7088f8fde391416262df8315180071c4d31824dac28efbb3ca"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-06.zip/008.bin",
+          "bytes": 8388608,
+          "sha256": "395009981a3f4020e35bdb786f5cecff02c4327f7d9db0df32e9409ed17ab7f4"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-06.zip/009.bin",
+          "bytes": 8388608,
+          "sha256": "f5915f29c0d4b1a531545ff56d676124fd42db43b7f883c393027356f81d879b"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-06.zip/010.bin",
+          "bytes": 6114046,
+          "sha256": "3f070e0ebe8511e06f234a356dfbe525a1e2fab38de1e5de13356b312a27a1f7"
+        }
+      ]
+    },
+    {
+      "name": "portable-engine-v2-07.zip",
+      "bytes": 90000126,
+      "sha256": "fe10384de13ac90ff5ad2038738d700a7101d9487e7cacecb0b4325787f5acca",
+      "chunks": [
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-07.zip/000.bin",
+          "bytes": 8388608,
+          "sha256": "7111dcca521f8c73640f55458f65ef962ee9247501b5c072db49fb23f8316cf0"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-07.zip/001.bin",
+          "bytes": 8388608,
+          "sha256": "a86ce0fa663550c0c59d27e29bd5f1a61fbcf5060f04a362eea90097207009bd"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-07.zip/002.bin",
+          "bytes": 8388608,
+          "sha256": "3dcbe87f032197399e26ab49774c695ccfb3bed3b856414594dd0cd7c2f2c10a"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-07.zip/003.bin",
+          "bytes": 8388608,
+          "sha256": "6976f4f55e909304cde3c3999faec3e06a01dcc4fb3cd989afbdeba57f18fce3"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-07.zip/004.bin",
+          "bytes": 8388608,
+          "sha256": "031e95afddf0efb0b633cfb27cdb68ee184ce8f47c2f112514578193139da1cf"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-07.zip/005.bin",
+          "bytes": 8388608,
+          "sha256": "4fa17aae402d4e0443b23e1d98d72b3563601fa63d5166ea35f45c877d0f668a"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-07.zip/006.bin",
+          "bytes": 8388608,
+          "sha256": "f64814a6dafc829ccab89705135faea5077402e7dc16d9db5be020f257211655"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-07.zip/007.bin",
+          "bytes": 8388608,
+          "sha256": "ef6154d357e0b313a9a3b2b6084e240d8cb6ecc7c083ae58a584f4f6f72399b5"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-07.zip/008.bin",
+          "bytes": 8388608,
+          "sha256": "77f7e4642d695f145a3a4549d67314d3eecd4522ea03d576dc7ec9fdb370931a"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-07.zip/009.bin",
+          "bytes": 8388608,
+          "sha256": "8621cb0822d2ff5071fcab39f1ee03cf8aeb7ae2a65eaa32c581d994559635f9"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-07.zip/010.bin",
+          "bytes": 6114046,
+          "sha256": "3991a80cf7cacc01736b0e550a721e0693191a00c0dbcca5582fc57b39f1107d"
+        }
+      ]
+    },
+    {
+      "name": "portable-engine-v2-08.zip",
+      "bytes": 48655987,
+      "sha256": "e16a6fb03279286684bf48a774e2f39ad8dadcf288cdc14aacd1fe0746442045",
+      "chunks": [
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-08.zip/000.bin",
+          "bytes": 8388608,
+          "sha256": "1605777aab38a034b9f2a7ebb5bb870f978517aa99b01e3bf49e70c78c7740b0"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-08.zip/001.bin",
+          "bytes": 8388608,
+          "sha256": "a37e7cdd594a06d1054179c632d1cc5ff73bfb0a9ab362b984dcd7eb6fd9f1fa"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-08.zip/002.bin",
+          "bytes": 8388608,
+          "sha256": "81742d264b592fa99cfee7937e8108e4caeba0a034ade9b3a84cc6f7268786aa"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-08.zip/003.bin",
+          "bytes": 8388608,
+          "sha256": "565004563da85462b7c758841615a7bdda724b39a0127134de20487405520e2f"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-08.zip/004.bin",
+          "bytes": 8388608,
+          "sha256": "87cea9b50bbeaeb5b1f1bb06dbb1b3002111c6c37a1e3039a80abd7c846aa3dd"
+        },
+        {
+          "path": "publication/v0.0.7/chunks/portable-engine-v2-08.zip/005.bin",
+          "bytes": 6712947,
+          "sha256": "fa3b00898412d63443ef9558f105baa87c47dd4ec2483db8670dfd78b531e9f6"
+        }
+      ]
+    }
+  ]
+}
