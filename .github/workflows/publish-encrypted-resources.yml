@@ -3,7 +3,7 @@ name: Publish encrypted portable resources
 on:
   push:
     branches: [main]
-    paths: ['publication/v0.0.14/manifest.json']
+    paths: ['publication/v0.0.15/manifest.json']
   workflow_dispatch:
 
 permissions:
@@ -27,80 +27,110 @@ jobs:
           git clone --depth 1 --single-branch --branch main "https://github.com/${GITHUB_REPOSITORY}.git" input
           git -C input fetch --depth 1 origin "$GITHUB_SHA"
           git -C input checkout --detach "$GITHUB_SHA"
-      - name: Verify and publish encrypted resources
+      - name: Verify exact preserved resources and publish only v0.0.15
         shell: python
         run: |
-          import hashlib, json, os, pathlib, re, shutil, subprocess, tempfile, time
-          repo = os.environ["GITHUB_REPOSITORY"]
-          root = pathlib.Path("input").resolve()
-          manifest = json.loads((root / "publication/v0.0.14/manifest.json").read_text())
-          assert manifest["tag"] == "v1.0.0"
-          assets = manifest["assets"]
-          expected = {"launcher-resource-v0.0.14.zip"} | {f"portable-engine-v2-{n:02d}.zip" for n in range(1, 9)}
-          assert len(assets) == 9 and {a["name"] for a in assets} == expected
-          out = pathlib.Path("verified-assets")
+          import hashlib, json, os, pathlib, re, shutil, subprocess, tempfile, zipfile
+          repo = os.environ['GITHUB_REPOSITORY']
+          if repo != 'danielpatillo/portable-assets-20260930':
+              raise RuntimeError('Repository identity differs')
+          root = pathlib.Path('input').resolve()
+          manifest_file = root / 'publication/v0.0.15/manifest.json'
+          if hashlib.sha256(manifest_file.read_bytes()).hexdigest() != '9d3862bd4f7699054c438d2e7e403cc5057e06642782bf00131a8e065aa65a4e':
+              raise RuntimeError('The reviewed manifest changed')
+          manifest = json.loads(manifest_file.read_text())
+          new_name = 'launcher-resource-v0.0.15.zip'
+          new_sha = '00d6215e5e61f27259a21ee37a9aa2d4119c7e0c43e37e297f00e9e0358ce403'
+          new_bytes = 36079704
+          cipher_sha = '43dd7b87e15897634d136735e93eb4af8a6b6991ed38e35100a01201b93f2135'
+          base_names = {f'portable-engine-v2-{n:02}.zip' for n in range(1, 9)} | {f'launcher-resource-v0.0.{n}.zip' for n in range(7, 15)}
+          expected_assets = {new_name} | {f'portable-engine-v2-{n:02}.zip' for n in range(1, 9)}
+          if manifest.get('version') != '0.0.15' or manifest.get('repository') != repo or manifest.get('tag') != 'v1.0.0' or manifest.get('release_id') != 400583482:
+              raise RuntimeError('Manifest identity differs')
+          if manifest.get('baseline_head_sha') != '01b828e5189e9674cce5885f8b771b5b7feda5a3':
+              raise RuntimeError('Manifest baseline differs')
+          assets = manifest['assets']
+          preserved = manifest['preserved_assets']
+          if len(assets) != 9 or {a['name'] for a in assets} != expected_assets:
+              raise RuntimeError('Unexpected resources requested for verification')
+          if len(preserved) != 16 or {a['name'] for a in preserved} != base_names or len({a['id'] for a in preserved}) != 16:
+              raise RuntimeError('The sixteen preserved resources differ')
+          originals = {a['name']: a for a in preserved}
+          engine_chunk_count = 0
+          out = pathlib.Path('verified-assets')
           out.mkdir(exist_ok=True)
           def digest(path):
               h = hashlib.sha256()
-              with path.open("rb") as f:
-                  for b in iter(lambda: f.read(4*1024*1024), b""):
-                      h.update(b)
+              with path.open('rb') as stream:
+                  for block in iter(lambda: stream.read(4*1024*1024), b''):
+                      h.update(block)
               return h.hexdigest()
           for asset in assets:
-              assert re.fullmatch(r"[0-9a-f]{64}", asset["sha256"])
-              target = out / asset["name"]
-              with target.open("wb") as dest:
-                  for chunk in asset["chunks"]:
-                      source = (root / chunk["path"]).resolve()
-                      assert source.is_relative_to(root / ("publication/v0.0.14/chunks" if asset["name"] == "launcher-resource-v0.0.14.zip" else "publication/v0.0.7/chunks"))
-                      assert source.stat().st_size == chunk["bytes"]
-                      assert digest(source) == chunk["sha256"]
-                      with source.open("rb") as src:
-                          shutil.copyfileobj(src, dest, 4*1024*1024)
-              assert target.stat().st_size == asset["bytes"]
-              assert digest(target) == asset["sha256"]
-          release = json.loads(subprocess.check_output(["gh", "api", f"repos/{repo}/releases/tags/v1.0.0"]))
-          assert release["id"] == 400583482 and release["draft"] is False
-          existing = {a["name"]: a for a in release["assets"]}
-          preserved = manifest["preserved_assets"]
-          assert len(preserved) == 15
-          for original in preserved:
-              remote = existing[original["name"]]
-              assert remote["id"] == original["id"]
-              assert remote["size"] == original["bytes"]
-              assert remote.get("digest") == original["digest"]
-          for asset in assets:
-              name = asset["name"]
-              if name in existing:
-                  with tempfile.TemporaryDirectory() as td:
-                      subprocess.run(["gh", "release", "download", "v1.0.0", "--repo", repo, "--pattern", name, "--dir", td], check=True)
-                      assert digest(pathlib.Path(td) / name) == asset["sha256"], f"Existing asset differs: {name}"
-                  print(f"Already verified: {name}", flush=True)
-                  continue
-              command = ["gh", "release", "upload", "v1.0.0", str(out/name), "--repo", repo]
-              for attempt in range(3):
-                  result = subprocess.run(command)
-                  if result.returncode == 0:
-                      break
-                  if attempt == 2:
-                      raise RuntimeError(f"Upload failed: {name}")
-                  time.sleep(5 * (attempt + 1))
-              print(f"Published: {name}", flush=True)
-          final = json.loads(subprocess.check_output(["gh", "api", f"repos/{repo}/releases/tags/v1.0.0"]))
-          published = {a["name"]: a for a in final["assets"]}
-          assert final["id"] == 400583482 and final["draft"] is False
-          assert len(published) == 16, 'Only the approved v0.0.14 overlay may be added'
-          for original in preserved:
-              remote = published[original["name"]]
-              assert remote["id"] == original["id"]
-              assert remote["size"] == original["bytes"]
-              assert remote.get("digest") == original["digest"]
-          for asset in assets:
-              assert asset["name"] in published
-              remote = published[asset["name"]]
-              assert remote["size"] == asset["bytes"]
-              if remote.get("digest"):
-                  assert remote["digest"] == "sha256:" + asset["sha256"]
-          print("Verified all nine encrypted release resources.", flush=True)
-
-
+              name = asset['name']
+              if not re.fullmatch(r'[0-9a-f]{64}', asset['sha256']):
+                  raise RuntimeError('Invalid resource digest')
+              is_new = name == new_name
+              if is_new:
+                  if asset['sha256'] != new_sha or asset['bytes'] != new_bytes or len(asset['chunks']) != 5:
+                      raise RuntimeError('The reviewed new resource differs')
+              else:
+                  original = originals[name]
+                  if asset['bytes'] != original['bytes'] or 'sha256:' + asset['sha256'] != original['digest']:
+                      raise RuntimeError('An original engine differs')
+                  engine_chunk_count += len(asset['chunks'])
+              target = out / name
+              allowed_root = root / ('publication/v0.0.15/chunks' if is_new else 'publication/v0.0.7/chunks')
+              with target.open('wb') as destination:
+                  for chunk in asset['chunks']:
+                      if not isinstance(chunk['path'], str) or not re.fullmatch(r'[0-9a-f]{64}', chunk['sha256']):
+                          raise RuntimeError('Invalid chunk declaration')
+                      source = (root / chunk['path']).resolve()
+                      if not source.is_relative_to(allowed_root) or not source.is_file() or source.is_symlink():
+                          raise RuntimeError('Unsafe or missing encrypted chunk')
+                      if source.stat().st_size != chunk['bytes'] or digest(source) != chunk['sha256']:
+                          raise RuntimeError('Encrypted chunk changed')
+                      with source.open('rb') as stream:
+                          shutil.copyfileobj(stream, destination, 4*1024*1024)
+              if target.stat().st_size != asset['bytes'] or digest(target) != asset['sha256']:
+                  raise RuntimeError('Reconstructed resource differs')
+          if engine_chunk_count != 83:
+              raise RuntimeError('Original engine chunk count differs')
+          with zipfile.ZipFile(out / new_name) as archive:
+              if len(archive.namelist()) != 3 or set(archive.namelist()) != {'launcher-v0.0.15.7z', '7zip/x64/7za.exe', '7zip/License.txt'}:
+                  raise RuntimeError('Unexpected public ZIP content')
+              if hashlib.sha256(archive.read('launcher-v0.0.15.7z')).hexdigest() != cipher_sha:
+                  raise RuntimeError('Public ciphertext differs')
+          def get_release():
+              return json.loads(subprocess.check_output(['gh', 'api', f'repos/{repo}/releases/tags/v1.0.0']))
+          def checked_release(release, require_new=False):
+              if release['id'] != 400583482 or release.get('draft') is not False or release.get('tag_name') != 'v1.0.0':
+                  raise RuntimeError('Live release identity differs')
+              live = {a['name']: a for a in release['assets']}
+              if len(live) != len(release['assets']):
+                  raise RuntimeError('Duplicate live asset names')
+              allowed = (base_names | {new_name},) if require_new else (base_names, base_names | {new_name})
+              if set(live) not in allowed:
+                  raise RuntimeError('Unreviewed resources were added or removed')
+              for original in preserved:
+                  remote = live[original['name']]
+                  if remote['id'] != original['id'] or remote['size'] != original['bytes'] or remote.get('digest') != original['digest'] or remote.get('state') != 'uploaded' or remote.get('browser_download_url') != original['download_url']:
+                      raise RuntimeError('A preserved asset changed: ' + original['name'])
+              if new_name in live:
+                  remote = live[new_name]
+                  if remote['size'] != new_bytes or remote.get('digest') != 'sha256:' + new_sha or remote.get('state') != 'uploaded':
+                      raise RuntimeError('The already present v15 resource differs')
+              return live
+          live = checked_release(get_release())
+          if new_name not in live:
+              # One upload attempt. A failure is reconciled on a later run, never blindly retried or overwritten.
+              subprocess.run(['gh', 'release', 'upload', 'v1.0.0', str(out / new_name), '--repo', repo], check=True)
+          final = checked_release(get_release(), require_new=True)
+          if len(final) != 17:
+              raise RuntimeError('Only the reviewed v15 overlay may have been added')
+          with tempfile.TemporaryDirectory() as directory:
+              subprocess.run(['gh', 'release', 'download', 'v1.0.0', '--repo', repo, '--pattern', new_name, '--dir', directory], check=True)
+              downloaded = pathlib.Path(directory) / new_name
+              if downloaded.stat().st_size != new_bytes or digest(downloaded) != new_sha:
+                  raise RuntimeError('The actual published resource download differs')
+          checked_release(get_release(), require_new=True)
+          print('Preserved all sixteen existing assets and verified the one new encrypted v0.0.15 resource.', flush=True)
