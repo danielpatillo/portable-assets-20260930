@@ -1,151 +1,93 @@
 name: Publish encrypted portable resources
-
 on:
   push:
     branches: [main]
-    paths: ['publication/v0.0.17/manifest.json']
+    paths: ['publication/v0.0.20/manifest.json']
   workflow_dispatch:
-
 permissions:
   contents: write
-
 concurrency:
   group: encrypted-portable-release
   cancel-in-progress: false
-
 jobs:
   publish:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 15
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
-      - name: Fetch the exact public revision
-        shell: bash
-        run: |
-          set -euo pipefail
-          git clone --depth 1 --single-branch --branch main "https://github.com/${GITHUB_REPOSITORY}.git" input
-          git -C input fetch --depth 1 origin "$GITHUB_SHA"
-          git -C input checkout --detach "$GITHUB_SHA"
-      - name: Verify exact preserved resources and publish only v0.0.17
+      - name: Verify ciphertext, preserve existing assets and publish v0.0.20
         shell: python
         run: |
-          import hashlib, json, os, pathlib, re, shutil, subprocess, tempfile, zipfile
+          import hashlib, json, os, pathlib, re, subprocess, tempfile, urllib.request, zipfile
           repo = os.environ['GITHUB_REPOSITORY']
-          if repo != 'danielpatillo/portable-assets-20260930':
-              raise RuntimeError('Repository identity differs')
-          root = pathlib.Path('input').resolve()
-          manifest_file = root / 'publication/v0.0.17/manifest.json'
-          if hashlib.sha256(manifest_file.read_bytes()).hexdigest() != '1c48cd70cf3305e00e7683e50f06f02d8332037b2ba61628459eda0e8483676c':
-              raise RuntimeError('The reviewed manifest changed')
-          manifest = json.loads(manifest_file.read_text())
-          new_name = 'launcher-resource-v0.0.17.zip'
-          new_sha = '54be5bef63196eb08ac686e80014e223de73dfe73fa72efaf953d66ccc3610c9'
-          new_bytes = 36101720
-          cipher_sha = '5fa68332400e4d8c65a9e0ecea71a2a5c4ab555e85ef25f220ed8379170266d8'
-          base_names = {f'portable-engine-v2-{n:02}.zip' for n in range(1, 9)} | {f'launcher-resource-v0.0.{n}.zip' for n in range(7, 17)}
-          expected_assets = {new_name} | {f'portable-engine-v2-{n:02}.zip' for n in range(1, 9)}
-          if manifest.get('version') != '0.0.17' or manifest.get('repository') != repo or manifest.get('tag') != 'v1.0.0' or manifest.get('release_id') != 400583482:
+          revision = os.environ['GITHUB_SHA']
+          if repo != 'danielpatillo/portable-assets-20260930' or not re.fullmatch(r'[0-9a-f]{40}', revision):
+              raise RuntimeError('Repository or revision differs')
+          def read_public(path):
+              url = f'https://raw.githubusercontent.com/{repo}/{revision}/{path}'
+              with urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': 'ARQUINOVATOS-v20-publication'}), timeout=60) as response:
+                  return response.read()
+          def sha(data):
+              return hashlib.sha256(data).hexdigest()
+          raw = read_public('publication/v0.0.20/manifest.json')
+          if sha(raw) != 'fc953fdd79f9db3b5b7beaa6e124db3a3ca9ab98391fa19053f75b66a296c735':
+              raise RuntimeError('Pinned manifest differs')
+          manifest = json.loads(raw)
+          if manifest['version'] != '0.0.20' or manifest['repository'] != repo or manifest['tag'] != 'v1.0.0' or manifest['release_id'] != 400583482:
               raise RuntimeError('Manifest identity differs')
-          if manifest.get('baseline_head_sha') != '4583c22898c94862ac789ca131cefef7f73de74a':
-              raise RuntimeError('Manifest baseline differs')
-          assets = manifest['assets']
+          asset = manifest['asset']
+          if asset['name'] != 'launcher-resource-v0.0.20.zip' or asset['sha256'] != 'afe6681174267abeba943488534cc5165e393391da537c5807890bf6742c7074' or asset['bytes'] != 38709768:
+              raise RuntimeError('Pinned encrypted resource differs')
           preserved = manifest['preserved_assets']
-          if len(assets) != 9 or {a['name'] for a in assets} != expected_assets:
-              raise RuntimeError('Unexpected resources requested for verification')
-          if len(preserved) != 18 or {a['name'] for a in preserved} != base_names or len({a['id'] for a in preserved}) != 18:
-              raise RuntimeError('The eighteen preserved resources differ')
-          originals = {a['name']: a for a in preserved}
-          engine_chunk_count = 0
-          out = pathlib.Path('verified-assets')
-          out.mkdir(exist_ok=True)
-          def digest(path):
-              h = hashlib.sha256()
-              with path.open('rb') as stream:
-                  for block in iter(lambda: stream.read(4*1024*1024), b''):
-                      h.update(block)
-              return h.hexdigest()
-          for asset in assets:
-              name = asset['name']
-              if not re.fullmatch(r'[0-9a-f]{64}', asset['sha256']):
-                  raise RuntimeError('Invalid resource digest')
-              is_new = name == new_name
-              if is_new:
-                  if asset['sha256'] != new_sha or asset['bytes'] != new_bytes or len(asset['chunks']) != 5:
-                      raise RuntimeError('The reviewed new resource differs')
-              else:
-                  original = originals[name]
-                  if asset['bytes'] != original['bytes'] or 'sha256:' + asset['sha256'] != original['digest']:
-                      raise RuntimeError('An original engine differs')
-                  engine_chunk_count += len(asset['chunks'])
-              target = out / name
-              allowed_root = root / ('publication/v0.0.17/chunks' if is_new else 'publication/v0.0.7/chunks')
-              with target.open('wb') as destination:
-                  for chunk in asset['chunks']:
-                      if not isinstance(chunk['path'], str) or not re.fullmatch(r'[0-9a-f]{64}', chunk['sha256']):
-                          raise RuntimeError('Invalid chunk declaration')
-                      source = (root / chunk['path']).resolve()
-                      if not source.is_relative_to(allowed_root) or not source.is_file() or source.is_symlink():
-                          raise RuntimeError('Unsafe or missing encrypted chunk')
-                      if source.stat().st_size != chunk['bytes'] or digest(source) != chunk['sha256']:
-                          raise RuntimeError('Encrypted chunk changed')
-                      with source.open('rb') as stream:
-                          shutil.copyfileobj(stream, destination, 4*1024*1024)
-              if target.stat().st_size != asset['bytes'] or digest(target) != asset['sha256']:
-                  raise RuntimeError('Reconstructed resource differs')
-          if engine_chunk_count != 83:
-              raise RuntimeError('Original engine chunk count differs')
-          with zipfile.ZipFile(out / new_name) as archive:
-              if len(archive.namelist()) != 3 or set(archive.namelist()) != {'launcher-v0.0.17.7z', '7zip/x64/7za.exe', '7zip/License.txt'}:
-                  raise RuntimeError('Unexpected public ZIP content')
-              if hashlib.sha256(archive.read('launcher-v0.0.17.7z')).hexdigest() != cipher_sha:
-                  raise RuntimeError('Public ciphertext differs')
+          if len(preserved) != 19 or len({a['name'] for a in preserved}) != 19 or len({a['id'] for a in preserved}) != 19:
+              raise RuntimeError('Preserved asset identities differ')
           def get_release():
               return json.loads(subprocess.check_output(['gh', 'api', f'repos/{repo}/releases/tags/v1.0.0']))
-          def checked_release(release, require_new=False, allow_owned_old=False):
-              if release['id'] != 400583482 or release.get('draft') is not False or release.get('tag_name') != 'v1.0.0':
-                  raise RuntimeError('Live release identity differs')
-              for field, expected in manifest['preserved_release_metadata'].items():
-                  if release.get(field) != expected:
-                      raise RuntimeError('Preserved release metadata changed: ' + field)
+          def check_release(require_new=False):
+              release = get_release()
+              for key, value in manifest['preserved_release_metadata'].items():
+                  if release.get(key) != value:
+                      raise RuntimeError('Release metadata changed: ' + key)
               live = {a['name']: a for a in release['assets']}
-              if len(live) != len(release['assets']):
-                  raise RuntimeError('Duplicate live asset names')
-              allowed = (base_names | {new_name},) if require_new else (base_names, base_names | {new_name})
-              if set(live) not in allowed:
-                  raise RuntimeError('Unreviewed resources were added or removed')
+              baseline = {a['name'] for a in preserved}
+              allowed = (baseline | {asset['name']},) if require_new else (baseline, baseline | {asset['name']})
+              if len(live) != len(release['assets']) or set(live) not in allowed:
+                  raise RuntimeError('Unreviewed assets changed')
               for original in preserved:
                   remote = live[original['name']]
-                  if remote['id'] != original['id'] or remote['size'] != original['bytes'] or remote.get('digest') != original['digest'] or remote.get('state') != 'uploaded' or remote.get('browser_download_url') != original['download_url']:
-                      raise RuntimeError('A preserved asset changed: ' + original['name'])
-              if new_name in live:
-                  remote = live[new_name]
-                  old = manifest['owned_replaceable_overlay']
-                  is_correct_new = remote['size'] == new_bytes and remote.get('digest') == 'sha256:' + new_sha and remote.get('state') == 'uploaded'
-                  is_exact_own_old = remote['id'] == old['id'] and remote['size'] == old['bytes'] and remote.get('digest') == 'sha256:' + old['sha256'] and remote.get('state') == old['state'] and remote.get('browser_download_url') == old['download_url']
-                  if not is_correct_new and not (allow_owned_old and is_exact_own_old):
-                      raise RuntimeError('An unrelated or unreviewed existing v17 overlay differs')
+                  if any(remote.get(key) != value for key, value in original.items()):
+                      raise RuntimeError('A preserved resource changed: ' + original['name'])
+              if asset['name'] in live:
+                  remote = live[asset['name']]
+                  if remote['size'] != asset['bytes'] or remote.get('digest') != 'sha256:' + asset['sha256'] or remote.get('state') != 'uploaded':
+                      raise RuntimeError('Existing v20 resource differs; no asset was deleted')
               return live
-          # All nine local ZIPs and the reviewed ciphertext are verified above before any DELETE.
-          live = checked_release(get_release(), allow_owned_old=True)
-          if new_name in live:
-              remote = live[new_name]
-              if remote['size'] != new_bytes or remote.get('digest') != 'sha256:' + new_sha:
-                  old = manifest['owned_replaceable_overlay']
-                  if remote['id'] != old['id'] or remote['size'] != old['bytes'] or remote.get('digest') != 'sha256:' + old['sha256'] or remote.get('state') != old['state']:
-                      raise RuntimeError('Exact own old overlay identity changed before DELETE')
-                  subprocess.run(['gh', 'api', '--method', 'DELETE', f"repos/{repo}/releases/assets/{old['id']}"], check=True)
-                  live = checked_release(get_release())
-          if new_name not in live:
-              # Exactly one upload; no clobber or blind retry. Private old bytes are retained for operator rollback.
-              subprocess.run(['gh', 'release', 'upload', 'v1.0.0', str(out / new_name), '--repo', repo], check=True)
-          final = checked_release(get_release(), require_new=True)
-          if len(final) != 19:
-              raise RuntimeError('Only the reviewed v17 overlay may have been added')
           with tempfile.TemporaryDirectory() as directory:
-              subprocess.run(['gh', 'release', 'download', 'v1.0.0', '--repo', repo, '--pattern', new_name, '--dir', directory], check=True)
-              downloaded = pathlib.Path(directory) / new_name
-              if downloaded.stat().st_size != new_bytes or digest(downloaded) != new_sha:
-                  raise RuntimeError('The actual published resource download differs')
-          checked_release(get_release(), require_new=True)
-          print('Preserved all eighteen existing assets and verified the one new encrypted v0.0.17 resource.', flush=True)
+              target = pathlib.Path(directory) / asset['name']
+              with target.open('wb') as stream:
+                  for chunk in asset['chunks']:
+                      if not re.fullmatch(r'publication/v0\.0\.20/chunks/launcher-resource-v0\.0\.20\.zip\.[0-9]{3}\.bin', chunk['path']):
+                          raise RuntimeError('Chunk path differs')
+                      data = read_public(chunk['path'])
+                      if len(data) != chunk['bytes'] or sha(data) != chunk['sha256']:
+                          raise RuntimeError('Encrypted chunk differs')
+                      stream.write(data)
+              if target.stat().st_size != asset['bytes'] or sha(target.read_bytes()) != asset['sha256']:
+                  raise RuntimeError('Reconstructed resource differs')
+              with zipfile.ZipFile(target) as archive:
+                  if len(archive.namelist()) != 3 or set(archive.namelist()) != {'launcher-v0.0.20.7z', '7zip/x64/7za.exe', '7zip/License.txt'}:
+                      raise RuntimeError('Public ZIP contains unexpected files')
+                  if sha(archive.read('launcher-v0.0.20.7z')) != asset['cipher_sha256']:
+                      raise RuntimeError('Ciphertext differs')
+              live = check_release()
+              if asset['name'] not in live:
+                  subprocess.run(['gh', 'release', 'upload', 'v1.0.0', str(target), '--repo', repo], check=True)
+              final = check_release(require_new=True)
+              request = urllib.request.Request(final[asset['name']]['browser_download_url'], headers={'User-Agent': 'ARQUINOVATOS-v20-public-download'})
+              with urllib.request.urlopen(request, timeout=120) as response:
+                  downloaded = response.read()
+              if len(downloaded) != asset['bytes'] or sha(downloaded) != asset['sha256']:
+                  raise RuntimeError('Unauthenticated public download differs')
+              check_release(require_new=True)
+          print('Preserved 19 existing assets; uploaded and publicly downloaded the verified encrypted v0.0.20 resource.')

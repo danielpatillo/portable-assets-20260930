@@ -1,0 +1,628 @@
+{
+  "schema": 1,
+  "version": "0.0.20",
+  "repository": "danielpatillo/portable-assets-20260930",
+  "tag": "v1.0.0",
+  "release_id": 400583482,
+  "baseline_head_sha": "445650e7ad3f148e56e24a79b382194c7885ffcc",
+  "preserved_release_metadata": {
+    "id": 400583482,
+    "tag_name": "v1.0.0",
+    "name": "Portable assets v1.0.0",
+    "body": "Encrypted portable distribution resources for Comfy + Swarm Launcher by arquinovatos.",
+    "draft": false,
+    "prerelease": false,
+    "target_commitish": "main",
+    "immutable": false,
+    "created_at": "2026-10-01T00:25:27Z",
+    "published_at": "2026-10-01T01:47:59Z"
+  },
+  "preserved_assets": [
+    {
+      "id": 606683898,
+      "name": "launcher-resource-v0.0.10.zip",
+      "size": 35360678,
+      "digest": "sha256:38484968f1bcae8e94dfa50cae1fbd92ab15f4f204b3756172d83114f009180e",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.10.zip",
+      "label": "",
+      "content_type": "application/zip",
+      "created_at": "2026-10-02T23:10:05Z",
+      "updated_at": "2026-10-02T23:10:06Z"
+    },
+    {
+      "id": 607030323,
+      "name": "launcher-resource-v0.0.11.zip",
+      "size": 53877622,
+      "digest": "sha256:edd89248fa9b900760490f18fa50a2d26ccd2056c46c1750b0a7887b312d0f8c",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.11.zip",
+      "label": "",
+      "content_type": "application/zip",
+      "created_at": "2026-10-03T03:10:07Z",
+      "updated_at": "2026-10-03T03:10:09Z"
+    },
+    {
+      "id": 607281033,
+      "name": "launcher-resource-v0.0.12.zip",
+      "size": 27855046,
+      "digest": "sha256:8f5873e8fe566ff401da76ecfc3fd9fa7e679e3485bf98dfe79c713fa3593b74",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.12.zip",
+      "label": "",
+      "content_type": "application/zip",
+      "created_at": "2026-10-03T06:21:27Z",
+      "updated_at": "2026-10-03T06:21:28Z"
+    },
+    {
+      "id": 608119897,
+      "name": "launcher-resource-v0.0.13.zip",
+      "size": 27912854,
+      "digest": "sha256:ca34c282547a371d93740a7ed9c579c05d3f4b59298a0feccca0e70bd47be028",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.13.zip",
+      "label": "",
+      "content_type": "application/zip",
+      "created_at": "2026-10-03T16:19:31Z",
+      "updated_at": "2026-10-03T16:19:33Z"
+    },
+    {
+      "id": 609591961,
+      "name": "launcher-resource-v0.0.14.zip",
+      "size": 36073576,
+      "digest": "sha256:71ec41bd57f6d71b06be5e4e8df833860889bafda99727916a5e7f8327c10a9e",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.14.zip",
+      "label": "",
+      "content_type": "application/zip",
+      "created_at": "2026-10-04T10:07:27Z",
+      "updated_at": "2026-10-04T10:07:29Z"
+    },
+    {
+      "id": 610257314,
+      "name": "launcher-resource-v0.0.15.zip",
+      "size": 36079704,
+      "digest": "sha256:00d6215e5e61f27259a21ee37a9aa2d4119c7e0c43e37e297f00e9e0358ce403",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.15.zip",
+      "label": "",
+      "content_type": "application/zip",
+      "created_at": "2026-10-04T17:18:11Z",
+      "updated_at": "2026-10-04T17:18:13Z"
+    },
+    {
+      "id": 610523057,
+      "name": "launcher-resource-v0.0.16.zip",
+      "size": 36081080,
+      "digest": "sha256:0b2b8a9f31afb3cafc446603c7e52e3194da678de476e5bf04c04350dcdad464",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.16.zip",
+      "label": "",
+      "content_type": "application/zip",
+      "created_at": "2026-10-04T19:46:37Z",
+      "updated_at": "2026-10-04T19:46:38Z"
+    },
+    {
+      "id": 611647762,
+      "name": "launcher-resource-v0.0.17.zip",
+      "size": 36101720,
+      "digest": "sha256:54be5bef63196eb08ac686e80014e223de73dfe73fa72efaf953d66ccc3610c9",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.17.zip",
+      "label": "",
+      "content_type": "application/zip",
+      "created_at": "2026-10-05T05:52:11Z",
+      "updated_at": "2026-10-05T05:52:13Z"
+    },
+    {
+      "id": 605835224,
+      "name": "launcher-resource-v0.0.7.zip",
+      "size": 27812148,
+      "digest": "sha256:3e3d85da2a5289e45c2aee97c85c9fc9f7832c190de23194c4dca9ae57c3f7d4",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.7.zip",
+      "label": "",
+      "content_type": "application/zip",
+      "created_at": "2026-10-02T14:57:03Z",
+      "updated_at": "2026-10-02T14:57:04Z"
+    },
+    {
+      "id": 606266376,
+      "name": "launcher-resource-v0.0.8.zip",
+      "size": 27823444,
+      "digest": "sha256:e4f35696ed8a2ff3ff234085b38c6a60120691542da910a694be82e5ba797930",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.8.zip",
+      "label": "",
+      "content_type": "application/zip",
+      "created_at": "2026-10-02T18:54:00Z",
+      "updated_at": "2026-10-02T18:54:02Z"
+    },
+    {
+      "id": 606474311,
+      "name": "launcher-resource-v0.0.9.zip",
+      "size": 27852964,
+      "digest": "sha256:6418a48c11fd80a6bcad42307137164a922d304f66473af8cf055fe296313fa6",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.9.zip",
+      "label": "",
+      "content_type": "application/zip",
+      "created_at": "2026-10-02T20:54:37Z",
+      "updated_at": "2026-10-02T20:54:38Z"
+    },
+    {
+      "id": 605835296,
+      "name": "portable-engine-v2-01.zip",
+      "size": 90000126,
+      "digest": "sha256:54e85c25cf9a778876b4abf3ddc1b6eaeb749313ae2392f0fa99a558c19b4de7",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-01.zip",
+      "label": "",
+      "content_type": "application/zip",
+      "created_at": "2026-10-02T14:57:05Z",
+      "updated_at": "2026-10-02T14:57:08Z"
+    },
+    {
+      "id": 605835415,
+      "name": "portable-engine-v2-02.zip",
+      "size": 90000126,
+      "digest": "sha256:bb5128dbdfe1c5fb3768a70773d885aee25bf0393e4907df7246f6d66f3f81f1",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-02.zip",
+      "label": "",
+      "content_type": "application/zip",
+      "created_at": "2026-10-02T14:57:08Z",
+      "updated_at": "2026-10-02T14:57:11Z"
+    },
+    {
+      "id": 605835570,
+      "name": "portable-engine-v2-03.zip",
+      "size": 90000126,
+      "digest": "sha256:41eb5b925d6363cbe5492180f0f6984764553e70fbcd5ffbb7774d0e7af015a1",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-03.zip",
+      "label": "",
+      "content_type": "application/zip",
+      "created_at": "2026-10-02T14:57:12Z",
+      "updated_at": "2026-10-02T14:57:15Z"
+    },
+    {
+      "id": 605835693,
+      "name": "portable-engine-v2-04.zip",
+      "size": 90000126,
+      "digest": "sha256:01a4707850b1174428f0ed712c5e61963a9600ba01a5890752c37ace68d51ab6",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-04.zip",
+      "label": "",
+      "content_type": "application/zip",
+      "created_at": "2026-10-02T14:57:15Z",
+      "updated_at": "2026-10-02T14:57:18Z"
+    },
+    {
+      "id": 605835847,
+      "name": "portable-engine-v2-05.zip",
+      "size": 90000126,
+      "digest": "sha256:50f9674e652b9931407def0914ae8591c7ec88318fc81c00cb429374929b7751",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-05.zip",
+      "label": "",
+      "content_type": "application/zip",
+      "created_at": "2026-10-02T14:57:19Z",
+      "updated_at": "2026-10-02T14:57:21Z"
+    },
+    {
+      "id": 605835965,
+      "name": "portable-engine-v2-06.zip",
+      "size": 90000126,
+      "digest": "sha256:e977b89ad11ba20464a3b03a50567c7e8bf8d70921961ab820c98562a562878b",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-06.zip",
+      "label": "",
+      "content_type": "application/zip",
+      "created_at": "2026-10-02T14:57:21Z",
+      "updated_at": "2026-10-02T14:57:24Z"
+    },
+    {
+      "id": 605836090,
+      "name": "portable-engine-v2-07.zip",
+      "size": 90000126,
+      "digest": "sha256:fe10384de13ac90ff5ad2038738d700a7101d9487e7cacecb0b4325787f5acca",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-07.zip",
+      "label": "",
+      "content_type": "application/zip",
+      "created_at": "2026-10-02T14:57:25Z",
+      "updated_at": "2026-10-02T14:57:27Z"
+    },
+    {
+      "id": 605836185,
+      "name": "portable-engine-v2-08.zip",
+      "size": 48655987,
+      "digest": "sha256:e16a6fb03279286684bf48a774e2f39ad8dadcf288cdc14aacd1fe0746442045",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-08.zip",
+      "label": "",
+      "content_type": "application/zip",
+      "created_at": "2026-10-02T14:57:28Z",
+      "updated_at": "2026-10-02T14:57:30Z"
+    }
+  ],
+  "asset": {
+    "name": "launcher-resource-v0.0.20.zip",
+    "bytes": 38709768,
+    "sha256": "afe6681174267abeba943488534cc5165e393391da537c5807890bf6742c7074",
+    "cipher_sha256": "75188e9e5a5740825a8c318aec716f6eaf0d3a6bbd4c5586b27333bca5699159",
+    "chunks": [
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.001.bin",
+        "bytes": 524288,
+        "sha256": "b368f3a5cdbe07614ff9ce5c292d2e8bfc0df870d4253e6ee6a6bdcf33bd993d"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.002.bin",
+        "bytes": 524288,
+        "sha256": "14b077494b8078ac4ce5b304c12ce7cff82ae940abe143f235674a7a466118b0"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.003.bin",
+        "bytes": 524288,
+        "sha256": "4181a6a9b393bb33e17a79395a55f20f02b14efd5c686079fc7d25e223cbbda1"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.004.bin",
+        "bytes": 524288,
+        "sha256": "45ac3376c9cb5daa56853f88c9b8bc1941e90109ebe98d27718fedd9a8617514"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.005.bin",
+        "bytes": 524288,
+        "sha256": "6c5489eee529a1708dcbb8ca8066c258ffd811a82d011dd62b86e6727c88c4ed"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.006.bin",
+        "bytes": 524288,
+        "sha256": "406f7ea79564dd4e0b467c97b18b454bd0102e5791e15a4e741ddb9e186236b7"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.007.bin",
+        "bytes": 524288,
+        "sha256": "9900a3760d2c895d826207f4f2bf262dc3bb8b336997f18c47daf183ffe4d5da"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.008.bin",
+        "bytes": 524288,
+        "sha256": "fe4bb694d987ebf366107e617c5846ea2ac6b6eeb95885ff16090970375d71d6"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.009.bin",
+        "bytes": 524288,
+        "sha256": "dd981be68c67e839bebb6c378f3bfb36da04420bd77e85e96aaf00a8b70c15f2"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.010.bin",
+        "bytes": 524288,
+        "sha256": "afd594dc07997764e3667b917d8efb05cdc6652a8d26e63d2f45259ef0f0aca5"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.011.bin",
+        "bytes": 524288,
+        "sha256": "8b9c774aaa0b7e7da6a7b881be9d75912a66185b6470ff865285c443e3695e5d"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.012.bin",
+        "bytes": 524288,
+        "sha256": "a56cae0ef023dcecb06572be9ba00563e206f7bd1996caf2590e5cacce17b971"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.013.bin",
+        "bytes": 524288,
+        "sha256": "0e1b5c206a31d4b6000b37b0c865f390fd196adebbfabf0830e20c2f6583b61d"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.014.bin",
+        "bytes": 524288,
+        "sha256": "6c0b8d32aef3785cd9ba50e2a4c242ce066eab8334e63213daa09d681103c8a6"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.015.bin",
+        "bytes": 524288,
+        "sha256": "52fa6b5b8d25ce79407e50e80c920daa3eb7c27196782731ddbfc16a511080ce"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.016.bin",
+        "bytes": 524288,
+        "sha256": "25c631667990678a82f61d324efb5c243aa4beae1b8537e8954f37a7adda317b"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.017.bin",
+        "bytes": 524288,
+        "sha256": "31acba89c2c70bb61f75bcb335c12b1392eae7e5f46bf52f23756581244c34e2"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.018.bin",
+        "bytes": 524288,
+        "sha256": "202a7bcdd0d87c7d7c05991f2f78d43647e245a6a5a8c638b97eb14a29348847"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.019.bin",
+        "bytes": 524288,
+        "sha256": "04e5b2def896417e94ea00f40a713cb183df829def83982a5f86548ba5fa490d"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.020.bin",
+        "bytes": 524288,
+        "sha256": "51d988c2e12bc63f99b953c7cd78b816cbcb71eea2b11976b3963a9436bd9baa"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.021.bin",
+        "bytes": 524288,
+        "sha256": "381df21ecad90ce8aa009dc5df434f50e513fad610d2efc87d28898332166875"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.022.bin",
+        "bytes": 524288,
+        "sha256": "6e0de67753c3518f8474fd7742728a6da9f832553d686a6d40ed3e5c0ae19a38"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.023.bin",
+        "bytes": 524288,
+        "sha256": "ad5429c8d2265b1efc658b9bd3ce7b957084c2a39531223ad2de8af0c618ae39"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.024.bin",
+        "bytes": 524288,
+        "sha256": "fb91df7b7f4b09621f9926cd1aecbae885a960ca199c68989c5ed9d266e5c893"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.025.bin",
+        "bytes": 524288,
+        "sha256": "5efbeb9ba3eba828b5af641d47bb4f03f935fddd183d3dbb00672a66d193b79a"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.026.bin",
+        "bytes": 524288,
+        "sha256": "ac71cc109a46f81a04e2b2aa055ad52bca20375e0be394e3ed3aab877acd8b08"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.027.bin",
+        "bytes": 524288,
+        "sha256": "f3e536c7cb0f07056b595767723493d99385751b868c920592f9a7a807100b58"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.028.bin",
+        "bytes": 524288,
+        "sha256": "c50917e5a02656205387a4cc9d3208e1c1e4536ee800cc272da63d98ac0d8223"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.029.bin",
+        "bytes": 524288,
+        "sha256": "57680cb8fe762ee1a5b70d7f85a0242a32418aa2f57889f0947fa34d100f7a33"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.030.bin",
+        "bytes": 524288,
+        "sha256": "35353b370aae6c9f22e8bbbb6a72390f0a0f20d01598b78ed3f864359253f5d0"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.031.bin",
+        "bytes": 524288,
+        "sha256": "8775d76bd3b953fc6d5420f644fb310278f48a137df58d7d6712d29add8fd01a"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.032.bin",
+        "bytes": 524288,
+        "sha256": "71fb7c16991c081b0ba03629899d75e8dec4493ce214bf34801be921d0da528f"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.033.bin",
+        "bytes": 524288,
+        "sha256": "3dddbb809430766b7cfb511d8c62ea11c5e3a6680b01c00abc9fd45ea1f892fb"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.034.bin",
+        "bytes": 524288,
+        "sha256": "07d742f4df9329521721c941204a3f654c018b17d5e07d99fe4e174de3dee701"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.035.bin",
+        "bytes": 524288,
+        "sha256": "fcc34edc4109e7546824df23dce14c37a5bb563e4e5b4ece5a1fb90bc322f666"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.036.bin",
+        "bytes": 524288,
+        "sha256": "1c5ede33a755d34180ef89eb1325da2670e21cb4c97ed014c330fc0b5b8098a5"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.037.bin",
+        "bytes": 524288,
+        "sha256": "256956f435c1fcc407f5658ab97e9f3ac2519b9eb5fb529f6ac3f4c857f36f2f"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.038.bin",
+        "bytes": 524288,
+        "sha256": "4f3a6476439d22c96373e4a8d3a700b9b8cb02991e9007c0d560181c48c4a586"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.039.bin",
+        "bytes": 524288,
+        "sha256": "d68f3a68ec7a64691d78cdd9f6aa90180cc6b0ebe6b85dcd6d9a3c15d059c98f"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.040.bin",
+        "bytes": 524288,
+        "sha256": "613641cd3bcf162e736b3e2aaf12df1e653ac66950239be6b89ca8232f89690c"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.041.bin",
+        "bytes": 524288,
+        "sha256": "f91d9595e286bf9315b8906e86b7c1b288920804d2ac5ece24633a8ec085c043"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.042.bin",
+        "bytes": 524288,
+        "sha256": "35fc51250ef8ea0e3788b997ca860423e4db619ca9d26ac7d5cdd9e2f8c98d05"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.043.bin",
+        "bytes": 524288,
+        "sha256": "828fce4e7f9b98ed623a529e6677c9d5a4e02f3dcf7a7fc809271e67810cf896"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.044.bin",
+        "bytes": 524288,
+        "sha256": "205b95617e872ab1e8ee5fce3789ebc2885a54cdfdb8b7c30bf0a0b0709003f6"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.045.bin",
+        "bytes": 524288,
+        "sha256": "a5093d76969e42d48229c5d4ed1bb210b46e0da098b3c80b9027fce6a27f3dca"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.046.bin",
+        "bytes": 524288,
+        "sha256": "0f2b1d4ca267c275c3cafcb0d40a9120b3f5581f0431f8b883b52eeb7f4018aa"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.047.bin",
+        "bytes": 524288,
+        "sha256": "0f6b23ec1549d6972fcf4468e3ed5b2cf58ce5bfc16c0409c5013ea5a2d08187"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.048.bin",
+        "bytes": 524288,
+        "sha256": "a2322c58a4ab3211bba1605388bc0a832e9360649a5a0b601a28a50cc5257373"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.049.bin",
+        "bytes": 524288,
+        "sha256": "e0574a221bcd79deef194e36dc8f7ff8bd4daea81ab856d9cf1c8110341e4861"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.050.bin",
+        "bytes": 524288,
+        "sha256": "3db5b1bb54da485ebc0960eb122b1699a42f8f43cc906e5f6574ac99ef2737ec"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.051.bin",
+        "bytes": 524288,
+        "sha256": "b78c9c04a392812edce4583af1de6d8feac2965d57f5f832008c1733ac951d5d"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.052.bin",
+        "bytes": 524288,
+        "sha256": "8985ddc31f6aa1fdddac8cf1741c104ba96f042711df5517759966569272f6df"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.053.bin",
+        "bytes": 524288,
+        "sha256": "e386824e96e757c9115987ef787ec79fecf0a24a43188027c3912f2d40aae107"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.054.bin",
+        "bytes": 524288,
+        "sha256": "82f3d799031849cd638f0ab4c28565b63fed0def47c9fe8aaeb4b2adbb12b712"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.055.bin",
+        "bytes": 524288,
+        "sha256": "8dfd59da166e1af145c5077357e582077e5995325b8d58abd132a085c26ba6db"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.056.bin",
+        "bytes": 524288,
+        "sha256": "aa7a08dc0c5aebfa8b8a39f32bca43c2530a13e967d0bb3a98628195e9a4fdd2"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.057.bin",
+        "bytes": 524288,
+        "sha256": "1da7fcee7241221f3c637786d0b96c5e3a713186de88eb7e50794202b7c46e65"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.058.bin",
+        "bytes": 524288,
+        "sha256": "dd7ee2a2480bf4efe48111bf032b1de910872e44bbe6dda1f73b269660af266a"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.059.bin",
+        "bytes": 524288,
+        "sha256": "530b4b438e67838e3722033aa97adb4b11775be864ffae5a88a0b83a5cf93d38"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.060.bin",
+        "bytes": 524288,
+        "sha256": "23ffc5d6ae16eb7ddb5f81e3d3e0d6717cb19ab858d1496e829bf628703224d9"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.061.bin",
+        "bytes": 524288,
+        "sha256": "ff6cef5cfa7365d4bc4963925dd300777d9e567007d5c98940d83edbd3849703"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.062.bin",
+        "bytes": 524288,
+        "sha256": "2cb431ab7ab8776b2b8e34d59e7168d0611c568ebe3495febf8a861424a39d11"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.063.bin",
+        "bytes": 524288,
+        "sha256": "07b995ff73566d3c7a3274d31dceb3e0f26f8cc16431618c32e282b288adadb9"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.064.bin",
+        "bytes": 524288,
+        "sha256": "f13503d75039beeb297488f6d9468472256c9d04571c339bdca40f1c835b460f"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.065.bin",
+        "bytes": 524288,
+        "sha256": "9b9094d8b0044c83e1710b878cd5d1b3c77e7ed2ca4e55259d355e51ae3e903e"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.066.bin",
+        "bytes": 524288,
+        "sha256": "ec28ba0f9da6e86c4f4638c62a28670db7d6d7e9fee92b4d65e5146e437e9e7a"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.067.bin",
+        "bytes": 524288,
+        "sha256": "a01682ff60d8b966200dabc9465aafe7d35c1399eaddf87f6d7f1664542dd608"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.068.bin",
+        "bytes": 524288,
+        "sha256": "2b5e2d587bb67295906703e42d5d5da377444b03c23157b9b05b97d1e55b7402"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.069.bin",
+        "bytes": 524288,
+        "sha256": "bc66e9e72b4ad54b2c86230dd05621d2fa72f17b205f04fbae652cf34150a78f"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.070.bin",
+        "bytes": 524288,
+        "sha256": "a997ebb03953cd23b8b71f03b46e446555ec1cc350f9ab6fa799345c4875fa49"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.071.bin",
+        "bytes": 524288,
+        "sha256": "89aa88c83c62c72ec2cee11d37638efd17d9f7ab9bbccc20ca4adcf3f7ecdf67"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.072.bin",
+        "bytes": 524288,
+        "sha256": "cf41704f4ad17123df84657ad57b16c9ef867b73b97c6ba0749efd610fff65f8"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.073.bin",
+        "bytes": 524288,
+        "sha256": "beabf64bb4e189aa8ffc183d985c8ef92458b26490bcdd61f7a5633eeb91eb9f"
+      },
+      {
+        "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.074.bin",
+        "bytes": 436744,
+        "sha256": "901408f9d6e22fd0d48c802547f0ae1027c0502b4fadb9502ed316a1659f42a7"
+      }
+    ]
+  }
+}
