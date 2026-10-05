@@ -36,18 +36,18 @@ jobs:
               raise RuntimeError('Repository identity differs')
           root = pathlib.Path('input').resolve()
           manifest_file = root / 'publication/v0.0.17/manifest.json'
-          if hashlib.sha256(manifest_file.read_bytes()).hexdigest() != 'b760d1410255337d497779d804e42c048067c79c23d444e6c321b6a745a32a7a':
+          if hashlib.sha256(manifest_file.read_bytes()).hexdigest() != '1c48cd70cf3305e00e7683e50f06f02d8332037b2ba61628459eda0e8483676c':
               raise RuntimeError('The reviewed manifest changed')
           manifest = json.loads(manifest_file.read_text())
           new_name = 'launcher-resource-v0.0.17.zip'
-          new_sha = '686312057b3fc08efe6d7247affda901907a3051a13f60488e1644da0bba756d'
-          new_bytes = 36101656
-          cipher_sha = 'df3ea6fd1359d047711dde52a2bae606886de2d556180bd307d66795662f59c5'
+          new_sha = '54be5bef63196eb08ac686e80014e223de73dfe73fa72efaf953d66ccc3610c9'
+          new_bytes = 36101720
+          cipher_sha = '5fa68332400e4d8c65a9e0ecea71a2a5c4ab555e85ef25f220ed8379170266d8'
           base_names = {f'portable-engine-v2-{n:02}.zip' for n in range(1, 9)} | {f'launcher-resource-v0.0.{n}.zip' for n in range(7, 17)}
           expected_assets = {new_name} | {f'portable-engine-v2-{n:02}.zip' for n in range(1, 9)}
           if manifest.get('version') != '0.0.17' or manifest.get('repository') != repo or manifest.get('tag') != 'v1.0.0' or manifest.get('release_id') != 400583482:
               raise RuntimeError('Manifest identity differs')
-          if manifest.get('baseline_head_sha') != '62bd9296071e4366412b62b3afab5c28babd1607':
+          if manifest.get('baseline_head_sha') != '4583c22898c94862ac789ca131cefef7f73de74a':
               raise RuntimeError('Manifest baseline differs')
           assets = manifest['assets']
           preserved = manifest['preserved_assets']
@@ -102,7 +102,7 @@ jobs:
                   raise RuntimeError('Public ciphertext differs')
           def get_release():
               return json.loads(subprocess.check_output(['gh', 'api', f'repos/{repo}/releases/tags/v1.0.0']))
-          def checked_release(release, require_new=False):
+          def checked_release(release, require_new=False, allow_owned_old=False):
               if release['id'] != 400583482 or release.get('draft') is not False or release.get('tag_name') != 'v1.0.0':
                   raise RuntimeError('Live release identity differs')
               for field, expected in manifest['preserved_release_metadata'].items():
@@ -120,12 +120,24 @@ jobs:
                       raise RuntimeError('A preserved asset changed: ' + original['name'])
               if new_name in live:
                   remote = live[new_name]
-                  if remote['size'] != new_bytes or remote.get('digest') != 'sha256:' + new_sha or remote.get('state') != 'uploaded':
-                      raise RuntimeError('The already present v17 resource differs')
+                  old = manifest['owned_replaceable_overlay']
+                  is_correct_new = remote['size'] == new_bytes and remote.get('digest') == 'sha256:' + new_sha and remote.get('state') == 'uploaded'
+                  is_exact_own_old = remote['id'] == old['id'] and remote['size'] == old['bytes'] and remote.get('digest') == 'sha256:' + old['sha256'] and remote.get('state') == old['state'] and remote.get('browser_download_url') == old['download_url']
+                  if not is_correct_new and not (allow_owned_old and is_exact_own_old):
+                      raise RuntimeError('An unrelated or unreviewed existing v17 overlay differs')
               return live
-          live = checked_release(get_release())
+          # All nine local ZIPs and the reviewed ciphertext are verified above before any DELETE.
+          live = checked_release(get_release(), allow_owned_old=True)
+          if new_name in live:
+              remote = live[new_name]
+              if remote['size'] != new_bytes or remote.get('digest') != 'sha256:' + new_sha:
+                  old = manifest['owned_replaceable_overlay']
+                  if remote['id'] != old['id'] or remote['size'] != old['bytes'] or remote.get('digest') != 'sha256:' + old['sha256'] or remote.get('state') != old['state']:
+                      raise RuntimeError('Exact own old overlay identity changed before DELETE')
+                  subprocess.run(['gh', 'api', '--method', 'DELETE', f"repos/{repo}/releases/assets/{old['id']}"], check=True)
+                  live = checked_release(get_release())
           if new_name not in live:
-              # One upload attempt. A failure is reconciled on a later run, never blindly retried or overwritten.
+              # Exactly one upload; no clobber or blind retry. Private old bytes are retained for operator rollback.
               subprocess.run(['gh', 'release', 'upload', 'v1.0.0', str(out / new_name), '--repo', repo], check=True)
           final = checked_release(get_release(), require_new=True)
           if len(final) != 19:

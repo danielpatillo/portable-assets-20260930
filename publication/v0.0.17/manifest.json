@@ -4,7 +4,7 @@
   "repository": "danielpatillo/portable-assets-20260930",
   "tag": "v1.0.0",
   "release_id": 400583482,
-  "baseline_head_sha": "62bd9296071e4366412b62b3afab5c28babd1607",
+  "baseline_head_sha": "4583c22898c94862ac789ca131cefef7f73de74a",
   "preserved_release_metadata": {
     "id": 400583482,
     "tag_name": "v1.0.0",
@@ -12,6 +12,14 @@
     "body": "Encrypted portable distribution resources for Comfy + Swarm Launcher by arquinovatos.",
     "draft": false,
     "prerelease": false
+  },
+  "owned_replaceable_overlay": {
+    "id": 611586801,
+    "name": "launcher-resource-v0.0.17.zip",
+    "bytes": 36101656,
+    "sha256": "686312057b3fc08efe6d7247affda901907a3051a13f60488e1644da0bba756d",
+    "state": "uploaded",
+    "download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.17.zip"
   },
   "preserved_assets": [
     {
@@ -162,33 +170,33 @@
   "assets": [
     {
       "name": "launcher-resource-v0.0.17.zip",
-      "bytes": 36101656,
-      "sha256": "686312057b3fc08efe6d7247affda901907a3051a13f60488e1644da0bba756d",
+      "bytes": 36101720,
+      "sha256": "54be5bef63196eb08ac686e80014e223de73dfe73fa72efaf953d66ccc3610c9",
       "chunks": [
         {
           "path": "publication/v0.0.17/chunks/launcher-resource-v0.0.17.zip.001.bin",
           "bytes": 8388608,
-          "sha256": "6836e522c6ce0832de4beb35735cb7d8bd0871ef4d23008c09c8f3cb0cc8272e"
+          "sha256": "faa03089c30452d92de39f805402aa27f14b20507428e0b0ff2ebc0303de8812"
         },
         {
           "path": "publication/v0.0.17/chunks/launcher-resource-v0.0.17.zip.002.bin",
           "bytes": 8388608,
-          "sha256": "0e42182089948fd4814df8f28387fdc6da22081d655470702b44fe8b06ae8653"
+          "sha256": "eb46f0a3978c24c86cb77fb790bfed1e43f9784b07032f264367e1271a9a850f"
         },
         {
           "path": "publication/v0.0.17/chunks/launcher-resource-v0.0.17.zip.003.bin",
           "bytes": 8388608,
-          "sha256": "7e77a75dc44f58212ca97b633739e39a6ce8cf5018ba9c0ca082a90293e46b86"
+          "sha256": "7b4f44e7f67ce01573d74348c92c34dc4fabc5f90f324b22eaa44e6a6206fae3"
         },
         {
           "path": "publication/v0.0.17/chunks/launcher-resource-v0.0.17.zip.004.bin",
           "bytes": 8388608,
-          "sha256": "2c92b6811c0f5fb1cba7b5520a1ad4207252160b70f8febd85855d4eb8f8e291"
+          "sha256": "fd17e781fbc3cdf80e72d58ea8b6496c5b78aeb29b398ea48e3eb606d9e2c1c9"
         },
         {
           "path": "publication/v0.0.17/chunks/launcher-resource-v0.0.17.zip.005.bin",
-          "bytes": 2547224,
-          "sha256": "55926b876d30cb19286635be4c7a31343c3aeb10439a53b3a725bd8f98919d63"
+          "bytes": 2547288,
+          "sha256": "ebc8b6ba4fe92533ea7db44709a363127eb35fb7b703813130004562e4e1b7be"
         }
       ]
     },
