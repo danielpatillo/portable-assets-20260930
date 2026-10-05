@@ -8,7 +8,7 @@ permissions:
   contents: write
 concurrency:
   group: encrypted-portable-release
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   publish:
     runs-on: ubuntu-24.04
@@ -31,13 +31,13 @@ jobs:
           def sha(data):
               return hashlib.sha256(data).hexdigest()
           raw = read_public('publication/v0.0.20/manifest.json')
-          if sha(raw) != 'fc953fdd79f9db3b5b7beaa6e124db3a3ca9ab98391fa19053f75b66a296c735':
+          if sha(raw) != 'abea5fa045d04d6a69dc669d8a34832e5bf32c19635e34fa232ec981824b5ec7':
               raise RuntimeError('Pinned manifest differs')
           manifest = json.loads(raw)
           if manifest['version'] != '0.0.20' or manifest['repository'] != repo or manifest['tag'] != 'v1.0.0' or manifest['release_id'] != 400583482:
               raise RuntimeError('Manifest identity differs')
           asset = manifest['asset']
-          if asset['name'] != 'launcher-resource-v0.0.20.zip' or asset['sha256'] != 'afe6681174267abeba943488534cc5165e393391da537c5807890bf6742c7074' or asset['bytes'] != 38709768:
+          if asset['name'] != 'launcher-resource-v0.0.20.zip' or asset['sha256'] != '29a705383652e6669d2b1c4e5e74f120285f390e6a4b2c5140403659fb7713fc' or asset['bytes'] != 38710728:
               raise RuntimeError('Pinned encrypted resource differs')
           preserved = manifest['preserved_assets']
           if len(preserved) != 19 or len({a['name'] for a in preserved}) != 19 or len({a['id'] for a in preserved}) != 19:

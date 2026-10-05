@@ -4,7 +4,7 @@
   "repository": "danielpatillo/portable-assets-20260930",
   "tag": "v1.0.0",
   "release_id": 400583482,
-  "baseline_head_sha": "445650e7ad3f148e56e24a79b382194c7885ffcc",
+  "baseline_head_sha": "5a5087648ea3275101db463f524fb17a03318d1e",
   "preserved_release_metadata": {
     "id": 400583482,
     "tag_name": "v1.0.0",
@@ -249,379 +249,379 @@
   ],
   "asset": {
     "name": "launcher-resource-v0.0.20.zip",
-    "bytes": 38709768,
-    "sha256": "afe6681174267abeba943488534cc5165e393391da537c5807890bf6742c7074",
-    "cipher_sha256": "75188e9e5a5740825a8c318aec716f6eaf0d3a6bbd4c5586b27333bca5699159",
+    "bytes": 38710728,
+    "sha256": "29a705383652e6669d2b1c4e5e74f120285f390e6a4b2c5140403659fb7713fc",
+    "cipher_sha256": "b2dd85293ed2bd055d911db8838554f7276316baa341daa5ed0d135f0be4d305",
     "chunks": [
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.001.bin",
         "bytes": 524288,
-        "sha256": "b368f3a5cdbe07614ff9ce5c292d2e8bfc0df870d4253e6ee6a6bdcf33bd993d"
+        "sha256": "7585dd0320cffe952d70b98c045e900227c2433e6d85b74a28837eaccd5d6d9b"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.002.bin",
         "bytes": 524288,
-        "sha256": "14b077494b8078ac4ce5b304c12ce7cff82ae940abe143f235674a7a466118b0"
+        "sha256": "8e4784243e55f391cd02c186c3189c98fdf3f64efb233f8207e33a4e6cc7ea10"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.003.bin",
         "bytes": 524288,
-        "sha256": "4181a6a9b393bb33e17a79395a55f20f02b14efd5c686079fc7d25e223cbbda1"
+        "sha256": "5e4913b10e1426bde5e6ecbff35947ec57460c4b721db0b2c83638d73e268ad0"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.004.bin",
         "bytes": 524288,
-        "sha256": "45ac3376c9cb5daa56853f88c9b8bc1941e90109ebe98d27718fedd9a8617514"
+        "sha256": "df3ef5284670a7806dd2efa6c7220d5925c34c904fd401d136cf3ec425285fbb"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.005.bin",
         "bytes": 524288,
-        "sha256": "6c5489eee529a1708dcbb8ca8066c258ffd811a82d011dd62b86e6727c88c4ed"
+        "sha256": "1ddcb89581da08ee9b7aae055188df1381f414aa36692cd6c37bc9fade0f8d1d"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.006.bin",
         "bytes": 524288,
-        "sha256": "406f7ea79564dd4e0b467c97b18b454bd0102e5791e15a4e741ddb9e186236b7"
+        "sha256": "0cd739267ef8143d22777c9688d36abc03d8dbc408fa8b14553eaaf1ee8d6fd1"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.007.bin",
         "bytes": 524288,
-        "sha256": "9900a3760d2c895d826207f4f2bf262dc3bb8b336997f18c47daf183ffe4d5da"
+        "sha256": "7b83e290309f70b19d7e9a8d4d54745bb0045dd550ec5b6f9b08df8edd6ae972"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.008.bin",
         "bytes": 524288,
-        "sha256": "fe4bb694d987ebf366107e617c5846ea2ac6b6eeb95885ff16090970375d71d6"
+        "sha256": "9829f7ac403cd51d41952719eed647f3d40775e3a5f79d0223226dd21edf7885"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.009.bin",
         "bytes": 524288,
-        "sha256": "dd981be68c67e839bebb6c378f3bfb36da04420bd77e85e96aaf00a8b70c15f2"
+        "sha256": "f4778e6cb40d01e07795471578b715704706efaa923959005d6fc5cf71e0c893"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.010.bin",
         "bytes": 524288,
-        "sha256": "afd594dc07997764e3667b917d8efb05cdc6652a8d26e63d2f45259ef0f0aca5"
+        "sha256": "f2db890cd4a4ab138dfc8c9b07b105198b3b40abe159f52ed472f94a1572f53e"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.011.bin",
         "bytes": 524288,
-        "sha256": "8b9c774aaa0b7e7da6a7b881be9d75912a66185b6470ff865285c443e3695e5d"
+        "sha256": "3f48f5f1f4e69848b8f5a9c0dfb3e2c8fb8372dc0d429d90772e5d3904f3f2dd"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.012.bin",
         "bytes": 524288,
-        "sha256": "a56cae0ef023dcecb06572be9ba00563e206f7bd1996caf2590e5cacce17b971"
+        "sha256": "4ed23bc95f5d3dfb2af5d63fa913322e6a027ace843319bdd9aa74acea735cd0"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.013.bin",
         "bytes": 524288,
-        "sha256": "0e1b5c206a31d4b6000b37b0c865f390fd196adebbfabf0830e20c2f6583b61d"
+        "sha256": "32f8747ba4c4b9304e2a6ba4c6ece503ab5b650d69064922521d76c79216a7bf"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.014.bin",
         "bytes": 524288,
-        "sha256": "6c0b8d32aef3785cd9ba50e2a4c242ce066eab8334e63213daa09d681103c8a6"
+        "sha256": "522d60cb735b870d74c037e01c2413e41406077ec75b238011ea251e6dba8f5f"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.015.bin",
         "bytes": 524288,
-        "sha256": "52fa6b5b8d25ce79407e50e80c920daa3eb7c27196782731ddbfc16a511080ce"
+        "sha256": "2576fbe43aee973eebebbf56f5727c3875bf2830f28a88eaf51eb19bfa6d377f"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.016.bin",
         "bytes": 524288,
-        "sha256": "25c631667990678a82f61d324efb5c243aa4beae1b8537e8954f37a7adda317b"
+        "sha256": "435077a68925c578a126312113b25f75a1f48903d0b78ecdb9017353dbc31d2e"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.017.bin",
         "bytes": 524288,
-        "sha256": "31acba89c2c70bb61f75bcb335c12b1392eae7e5f46bf52f23756581244c34e2"
+        "sha256": "61c64efced1cb112aa4782c72326eaae874676426a5c7f4bfb20ad2d88a26c29"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.018.bin",
         "bytes": 524288,
-        "sha256": "202a7bcdd0d87c7d7c05991f2f78d43647e245a6a5a8c638b97eb14a29348847"
+        "sha256": "3ecc8b730f6e0a6047666d334b3a3619d022cb260466004f7e029ac6db167b3e"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.019.bin",
         "bytes": 524288,
-        "sha256": "04e5b2def896417e94ea00f40a713cb183df829def83982a5f86548ba5fa490d"
+        "sha256": "e7f9a10bfdb1a780382b7aa18151d95e06b36a0c097cf1953e280407565baabc"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.020.bin",
         "bytes": 524288,
-        "sha256": "51d988c2e12bc63f99b953c7cd78b816cbcb71eea2b11976b3963a9436bd9baa"
+        "sha256": "5e0dc3002fa35858ad47dd15fd18c01f8ced6758cc5b9c603aa311a88d1d5fa5"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.021.bin",
         "bytes": 524288,
-        "sha256": "381df21ecad90ce8aa009dc5df434f50e513fad610d2efc87d28898332166875"
+        "sha256": "b7a92ef4a004fe93cf238eadf130703f705f997b2542c8acfdf2dd25a98d6a9a"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.022.bin",
         "bytes": 524288,
-        "sha256": "6e0de67753c3518f8474fd7742728a6da9f832553d686a6d40ed3e5c0ae19a38"
+        "sha256": "e0b32043e7f09b059546acf078bc094b41a2833bd77cf85f9286f186ee3d46b3"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.023.bin",
         "bytes": 524288,
-        "sha256": "ad5429c8d2265b1efc658b9bd3ce7b957084c2a39531223ad2de8af0c618ae39"
+        "sha256": "7939d57e0ec65cfc7afdafbff059cfeacae3733c257061ab6306bd62a5e43949"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.024.bin",
         "bytes": 524288,
-        "sha256": "fb91df7b7f4b09621f9926cd1aecbae885a960ca199c68989c5ed9d266e5c893"
+        "sha256": "80832b54a833f5f7b7c5bba3c9f7217ae72970aa841f9d114975e516434e2c55"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.025.bin",
         "bytes": 524288,
-        "sha256": "5efbeb9ba3eba828b5af641d47bb4f03f935fddd183d3dbb00672a66d193b79a"
+        "sha256": "3f4b2782b120f2821d001cba8c3ac60482e7f837d481d881f062618a0af3d6a6"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.026.bin",
         "bytes": 524288,
-        "sha256": "ac71cc109a46f81a04e2b2aa055ad52bca20375e0be394e3ed3aab877acd8b08"
+        "sha256": "01c21ccb9f70d8c900794a05f15e75af547fb9e37bbaa65adcbbf968bce1aca3"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.027.bin",
         "bytes": 524288,
-        "sha256": "f3e536c7cb0f07056b595767723493d99385751b868c920592f9a7a807100b58"
+        "sha256": "313f8d34a794baf353e1ab981ecb1672c49b388ff23735c991cc971b9f61f2e2"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.028.bin",
         "bytes": 524288,
-        "sha256": "c50917e5a02656205387a4cc9d3208e1c1e4536ee800cc272da63d98ac0d8223"
+        "sha256": "e97647d06e865f25e4df9e1ad56fdebceb49991091a298454e915cdda963ca99"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.029.bin",
         "bytes": 524288,
-        "sha256": "57680cb8fe762ee1a5b70d7f85a0242a32418aa2f57889f0947fa34d100f7a33"
+        "sha256": "1c8fb2fa792054c6615bc9f3ff03e5be5a3c358b24bd75e4a78f5ffb0343ab76"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.030.bin",
         "bytes": 524288,
-        "sha256": "35353b370aae6c9f22e8bbbb6a72390f0a0f20d01598b78ed3f864359253f5d0"
+        "sha256": "82dedce767a6dbf0aed79bd20baf6c8b121a1e764a63b53ae58e09ccb2fdbebf"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.031.bin",
         "bytes": 524288,
-        "sha256": "8775d76bd3b953fc6d5420f644fb310278f48a137df58d7d6712d29add8fd01a"
+        "sha256": "2d6062db39fd966694e1b989a644b0797118ca722ef4ec20febdac098cad269e"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.032.bin",
         "bytes": 524288,
-        "sha256": "71fb7c16991c081b0ba03629899d75e8dec4493ce214bf34801be921d0da528f"
+        "sha256": "4a310b9f325aa6fe95ad5ebc5f8a649b4060ac673364654f0578ac2a6fd358af"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.033.bin",
         "bytes": 524288,
-        "sha256": "3dddbb809430766b7cfb511d8c62ea11c5e3a6680b01c00abc9fd45ea1f892fb"
+        "sha256": "81b440a7a0deaa7f22b431e27ac1fef48da0028e437469352bffd278d4eb4cc9"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.034.bin",
         "bytes": 524288,
-        "sha256": "07d742f4df9329521721c941204a3f654c018b17d5e07d99fe4e174de3dee701"
+        "sha256": "b00201f11d38ffd0a87e6f3b7f2539e5c4a813c4c6e309ceee8ef1295196c1eb"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.035.bin",
         "bytes": 524288,
-        "sha256": "fcc34edc4109e7546824df23dce14c37a5bb563e4e5b4ece5a1fb90bc322f666"
+        "sha256": "71599e632ad54e6b6462f3b0a54884271928a6a9bc4ec8fe8d2fd1c6ef65f339"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.036.bin",
         "bytes": 524288,
-        "sha256": "1c5ede33a755d34180ef89eb1325da2670e21cb4c97ed014c330fc0b5b8098a5"
+        "sha256": "fdc511b275702b5d2b6233ac7283ea8410f6dea2becc7f064444c9eb2927f825"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.037.bin",
         "bytes": 524288,
-        "sha256": "256956f435c1fcc407f5658ab97e9f3ac2519b9eb5fb529f6ac3f4c857f36f2f"
+        "sha256": "0bc12e7d2d44adec34997aa6c262f0f66b6bbf68f478da99e4039ed2577d9e8d"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.038.bin",
         "bytes": 524288,
-        "sha256": "4f3a6476439d22c96373e4a8d3a700b9b8cb02991e9007c0d560181c48c4a586"
+        "sha256": "a913f38cbe998a854fae7193b8f22fb095d23a924a4c9b42ee8b41756643c9de"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.039.bin",
         "bytes": 524288,
-        "sha256": "d68f3a68ec7a64691d78cdd9f6aa90180cc6b0ebe6b85dcd6d9a3c15d059c98f"
+        "sha256": "4ee728f6b5ed09dbf7cd0c01df4c9fc2b727879e13ee9349b0cc25cd690680b5"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.040.bin",
         "bytes": 524288,
-        "sha256": "613641cd3bcf162e736b3e2aaf12df1e653ac66950239be6b89ca8232f89690c"
+        "sha256": "dbb100a7d4f0d5026166ebbd5dd6256f6001f97d63eeb2e464f06b4a51c0dfc7"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.041.bin",
         "bytes": 524288,
-        "sha256": "f91d9595e286bf9315b8906e86b7c1b288920804d2ac5ece24633a8ec085c043"
+        "sha256": "26bc7248a7802fdc3fd22e696a6b93861022255c5d034cb4a1ff13fbc56da33b"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.042.bin",
         "bytes": 524288,
-        "sha256": "35fc51250ef8ea0e3788b997ca860423e4db619ca9d26ac7d5cdd9e2f8c98d05"
+        "sha256": "0e7e3bc0a927e730776693d8b2570b42778e5326c4819e8efe104cbdf29154b4"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.043.bin",
         "bytes": 524288,
-        "sha256": "828fce4e7f9b98ed623a529e6677c9d5a4e02f3dcf7a7fc809271e67810cf896"
+        "sha256": "b00ffea7179f531ef7f08b250f472776bb5a16b9a98459590392948b72e03044"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.044.bin",
         "bytes": 524288,
-        "sha256": "205b95617e872ab1e8ee5fce3789ebc2885a54cdfdb8b7c30bf0a0b0709003f6"
+        "sha256": "c2907150a9ca202505e9b92c70edd78eda5e65fc61421d01b4756610f7469b24"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.045.bin",
         "bytes": 524288,
-        "sha256": "a5093d76969e42d48229c5d4ed1bb210b46e0da098b3c80b9027fce6a27f3dca"
+        "sha256": "894db58f24a471e67c922d8d9e2cfffb3522a0d32668681e2ff0f5dd5e62a697"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.046.bin",
         "bytes": 524288,
-        "sha256": "0f2b1d4ca267c275c3cafcb0d40a9120b3f5581f0431f8b883b52eeb7f4018aa"
+        "sha256": "4cae9d16bb80424f2665c4caedcfeb21b821b9ebd06dde0802c722c9c452e3fc"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.047.bin",
         "bytes": 524288,
-        "sha256": "0f6b23ec1549d6972fcf4468e3ed5b2cf58ce5bfc16c0409c5013ea5a2d08187"
+        "sha256": "2015b5ed4da4285cc4b9ebc056e465df9fcf1c6accd8595cc7a4fbc0e3559d92"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.048.bin",
         "bytes": 524288,
-        "sha256": "a2322c58a4ab3211bba1605388bc0a832e9360649a5a0b601a28a50cc5257373"
+        "sha256": "35efd072a7ebb612afff43ff7a9cf92aabcdcb325aae06e01853bdf498ada091"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.049.bin",
         "bytes": 524288,
-        "sha256": "e0574a221bcd79deef194e36dc8f7ff8bd4daea81ab856d9cf1c8110341e4861"
+        "sha256": "12cf888b775b80fef46fa9966a731b34bb3a9fc3ece9a335e55e52e348ffbf08"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.050.bin",
         "bytes": 524288,
-        "sha256": "3db5b1bb54da485ebc0960eb122b1699a42f8f43cc906e5f6574ac99ef2737ec"
+        "sha256": "e385745cb131548f7170de514bfcfeb5444765f18e3b548aa5a8cf1c49eb5b26"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.051.bin",
         "bytes": 524288,
-        "sha256": "b78c9c04a392812edce4583af1de6d8feac2965d57f5f832008c1733ac951d5d"
+        "sha256": "f88e318e01620e26425c0f84b418d7e97bf90874555190642a22c1d1b47b67fe"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.052.bin",
         "bytes": 524288,
-        "sha256": "8985ddc31f6aa1fdddac8cf1741c104ba96f042711df5517759966569272f6df"
+        "sha256": "2e63b2d7fed60b0cfd433b8ff877e7426668e1eb47caf1833a0544045f0d1aa9"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.053.bin",
         "bytes": 524288,
-        "sha256": "e386824e96e757c9115987ef787ec79fecf0a24a43188027c3912f2d40aae107"
+        "sha256": "a24b0d9b468a543fef54d3bd214e73677df560e4d97010bfb7d6e979df3c072f"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.054.bin",
         "bytes": 524288,
-        "sha256": "82f3d799031849cd638f0ab4c28565b63fed0def47c9fe8aaeb4b2adbb12b712"
+        "sha256": "0cdda0e5a7960f9017a6825cce6fd09e0ee6b0f146ad8e2b2b91b2df512abdad"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.055.bin",
         "bytes": 524288,
-        "sha256": "8dfd59da166e1af145c5077357e582077e5995325b8d58abd132a085c26ba6db"
+        "sha256": "c897a593d331e730cb95fd913c8143d1bef425ed01483e58ef3172df0f9714c1"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.056.bin",
         "bytes": 524288,
-        "sha256": "aa7a08dc0c5aebfa8b8a39f32bca43c2530a13e967d0bb3a98628195e9a4fdd2"
+        "sha256": "39c8c1fe0c99094385c03cccfbc10f700c91c75212844e52bc21962c29c1b14c"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.057.bin",
         "bytes": 524288,
-        "sha256": "1da7fcee7241221f3c637786d0b96c5e3a713186de88eb7e50794202b7c46e65"
+        "sha256": "9912fd726773a08b6436c0db24bbdcb2ae0d55ca673f69703dc55a1d2a030e52"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.058.bin",
         "bytes": 524288,
-        "sha256": "dd7ee2a2480bf4efe48111bf032b1de910872e44bbe6dda1f73b269660af266a"
+        "sha256": "213e209f89101bbf4b2be7adcd400034b86f36e2ff0d4a466da6d453bffca510"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.059.bin",
         "bytes": 524288,
-        "sha256": "530b4b438e67838e3722033aa97adb4b11775be864ffae5a88a0b83a5cf93d38"
+        "sha256": "7c16f86c44fb72d563559700e762a2a3adedd5f8857ae46c055a03185b54d25a"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.060.bin",
         "bytes": 524288,
-        "sha256": "23ffc5d6ae16eb7ddb5f81e3d3e0d6717cb19ab858d1496e829bf628703224d9"
+        "sha256": "516315311ddc1177bbc928f65ae015560c2a45b698de7dde96c020f0a76a8348"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.061.bin",
         "bytes": 524288,
-        "sha256": "ff6cef5cfa7365d4bc4963925dd300777d9e567007d5c98940d83edbd3849703"
+        "sha256": "964c5739c68928ce6ef4295e6ffa2e73e956c117397934af24575bd1125833cb"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.062.bin",
         "bytes": 524288,
-        "sha256": "2cb431ab7ab8776b2b8e34d59e7168d0611c568ebe3495febf8a861424a39d11"
+        "sha256": "0d27ef5e17e99c13e9213704aa613cf83f2878e4dadd90c66b7683dd6d9f1c37"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.063.bin",
         "bytes": 524288,
-        "sha256": "07b995ff73566d3c7a3274d31dceb3e0f26f8cc16431618c32e282b288adadb9"
+        "sha256": "8472b4d0076e791ef22a35974bc3c85caededfe934013d86216ccb672c30bf57"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.064.bin",
         "bytes": 524288,
-        "sha256": "f13503d75039beeb297488f6d9468472256c9d04571c339bdca40f1c835b460f"
+        "sha256": "a24df73a600c81adee7efda8777e14bde1c32ab0780306ecde882518ad13a8fb"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.065.bin",
         "bytes": 524288,
-        "sha256": "9b9094d8b0044c83e1710b878cd5d1b3c77e7ed2ca4e55259d355e51ae3e903e"
+        "sha256": "ce874b1be4cba6d85a36dfa7ec8c7260df2b9cfa43033662a61fbb31d563002a"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.066.bin",
         "bytes": 524288,
-        "sha256": "ec28ba0f9da6e86c4f4638c62a28670db7d6d7e9fee92b4d65e5146e437e9e7a"
+        "sha256": "ddd40f1b10f9a84bde5c3c8cfb385caef1f2b2684e39f66906afbdd5a5abe981"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.067.bin",
         "bytes": 524288,
-        "sha256": "a01682ff60d8b966200dabc9465aafe7d35c1399eaddf87f6d7f1664542dd608"
+        "sha256": "10642eb3c0269c58f7b699475619e6a10879a8a89f8eb6373ca6ae8fc68207f2"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.068.bin",
         "bytes": 524288,
-        "sha256": "2b5e2d587bb67295906703e42d5d5da377444b03c23157b9b05b97d1e55b7402"
+        "sha256": "3904690e7efb2c6535cccc7945a70e6f831c858f3ec2c7c1679eaded64cec38e"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.069.bin",
         "bytes": 524288,
-        "sha256": "bc66e9e72b4ad54b2c86230dd05621d2fa72f17b205f04fbae652cf34150a78f"
+        "sha256": "055ccb824b7004aba2d6688933bf550b4b65523d1bc9740cfc93b21d7b4bb9a7"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.070.bin",
         "bytes": 524288,
-        "sha256": "a997ebb03953cd23b8b71f03b46e446555ec1cc350f9ab6fa799345c4875fa49"
+        "sha256": "6f1897800f12cde4d7248a2dedf8be6fac1384a9caee697b95bc4e810d001ace"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.071.bin",
         "bytes": 524288,
-        "sha256": "89aa88c83c62c72ec2cee11d37638efd17d9f7ab9bbccc20ca4adcf3f7ecdf67"
+        "sha256": "4d97d1d8ec02a85295b930f412969cfaba41b925c595d17f186b65f4738b8a5f"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.072.bin",
         "bytes": 524288,
-        "sha256": "cf41704f4ad17123df84657ad57b16c9ef867b73b97c6ba0749efd610fff65f8"
+        "sha256": "a639dc2742235edce7e25436761930234815b6eae3cc75ec2bfafe0766c02b00"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.073.bin",
         "bytes": 524288,
-        "sha256": "beabf64bb4e189aa8ffc183d985c8ef92458b26490bcdd61f7a5633eeb91eb9f"
+        "sha256": "b59010d133e11d96cb7776d0d79788c225c2f1c005a744a62daf0a9a16ebdf55"
       },
       {
         "path": "publication/v0.0.20/chunks/launcher-resource-v0.0.20.zip.074.bin",
-        "bytes": 436744,
-        "sha256": "901408f9d6e22fd0d48c802547f0ae1027c0502b4fadb9502ed316a1659f42a7"
+        "bytes": 437704,
+        "sha256": "7b7c209f28400ba65e5a87c9cc718cc619c208e27ca7b46ac9d82b58feb22285"
       }
     ]
   }
