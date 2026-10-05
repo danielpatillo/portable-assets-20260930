@@ -3,7 +3,7 @@ name: Publish encrypted portable resources
 on:
   push:
     branches: [main]
-    paths: ['publication/v0.0.16/manifest.json']
+    paths: ['publication/v0.0.17/manifest.json']
   workflow_dispatch:
 
 permissions:
@@ -27,7 +27,7 @@ jobs:
           git clone --depth 1 --single-branch --branch main "https://github.com/${GITHUB_REPOSITORY}.git" input
           git -C input fetch --depth 1 origin "$GITHUB_SHA"
           git -C input checkout --detach "$GITHUB_SHA"
-      - name: Verify exact preserved resources and publish only v0.0.16
+      - name: Verify exact preserved resources and publish only v0.0.17
         shell: python
         run: |
           import hashlib, json, os, pathlib, re, shutil, subprocess, tempfile, zipfile
@@ -35,26 +35,26 @@ jobs:
           if repo != 'danielpatillo/portable-assets-20260930':
               raise RuntimeError('Repository identity differs')
           root = pathlib.Path('input').resolve()
-          manifest_file = root / 'publication/v0.0.16/manifest.json'
-          if hashlib.sha256(manifest_file.read_bytes()).hexdigest() != 'd468085c61ee6a1720c4cbaf31108ef421fa214cafd90c4a806ca05a11d6ddd2':
+          manifest_file = root / 'publication/v0.0.17/manifest.json'
+          if hashlib.sha256(manifest_file.read_bytes()).hexdigest() != 'b760d1410255337d497779d804e42c048067c79c23d444e6c321b6a745a32a7a':
               raise RuntimeError('The reviewed manifest changed')
           manifest = json.loads(manifest_file.read_text())
-          new_name = 'launcher-resource-v0.0.16.zip'
-          new_sha = '0b2b8a9f31afb3cafc446603c7e52e3194da678de476e5bf04c04350dcdad464'
-          new_bytes = 36081080
-          cipher_sha = '07bf4ccfc05dd54d9d2fb0b5979de62af5c98a9d50364ea8d41a09fb86d556bd'
-          base_names = {f'portable-engine-v2-{n:02}.zip' for n in range(1, 9)} | {f'launcher-resource-v0.0.{n}.zip' for n in range(7, 16)}
+          new_name = 'launcher-resource-v0.0.17.zip'
+          new_sha = '686312057b3fc08efe6d7247affda901907a3051a13f60488e1644da0bba756d'
+          new_bytes = 36101656
+          cipher_sha = 'df3ea6fd1359d047711dde52a2bae606886de2d556180bd307d66795662f59c5'
+          base_names = {f'portable-engine-v2-{n:02}.zip' for n in range(1, 9)} | {f'launcher-resource-v0.0.{n}.zip' for n in range(7, 17)}
           expected_assets = {new_name} | {f'portable-engine-v2-{n:02}.zip' for n in range(1, 9)}
-          if manifest.get('version') != '0.0.16' or manifest.get('repository') != repo or manifest.get('tag') != 'v1.0.0' or manifest.get('release_id') != 400583482:
+          if manifest.get('version') != '0.0.17' or manifest.get('repository') != repo or manifest.get('tag') != 'v1.0.0' or manifest.get('release_id') != 400583482:
               raise RuntimeError('Manifest identity differs')
-          if manifest.get('baseline_head_sha') != 'afa137d0f8d7413b1982d356d3bc6aedb65c7096':
+          if manifest.get('baseline_head_sha') != '62bd9296071e4366412b62b3afab5c28babd1607':
               raise RuntimeError('Manifest baseline differs')
           assets = manifest['assets']
           preserved = manifest['preserved_assets']
           if len(assets) != 9 or {a['name'] for a in assets} != expected_assets:
               raise RuntimeError('Unexpected resources requested for verification')
-          if len(preserved) != 17 or {a['name'] for a in preserved} != base_names or len({a['id'] for a in preserved}) != 17:
-              raise RuntimeError('The seventeen preserved resources differ')
+          if len(preserved) != 18 or {a['name'] for a in preserved} != base_names or len({a['id'] for a in preserved}) != 18:
+              raise RuntimeError('The eighteen preserved resources differ')
           originals = {a['name']: a for a in preserved}
           engine_chunk_count = 0
           out = pathlib.Path('verified-assets')
@@ -79,7 +79,7 @@ jobs:
                       raise RuntimeError('An original engine differs')
                   engine_chunk_count += len(asset['chunks'])
               target = out / name
-              allowed_root = root / ('publication/v0.0.16/chunks' if is_new else 'publication/v0.0.7/chunks')
+              allowed_root = root / ('publication/v0.0.17/chunks' if is_new else 'publication/v0.0.7/chunks')
               with target.open('wb') as destination:
                   for chunk in asset['chunks']:
                       if not isinstance(chunk['path'], str) or not re.fullmatch(r'[0-9a-f]{64}', chunk['sha256']):
@@ -96,15 +96,18 @@ jobs:
           if engine_chunk_count != 83:
               raise RuntimeError('Original engine chunk count differs')
           with zipfile.ZipFile(out / new_name) as archive:
-              if len(archive.namelist()) != 3 or set(archive.namelist()) != {'launcher-v0.0.16.7z', '7zip/x64/7za.exe', '7zip/License.txt'}:
+              if len(archive.namelist()) != 3 or set(archive.namelist()) != {'launcher-v0.0.17.7z', '7zip/x64/7za.exe', '7zip/License.txt'}:
                   raise RuntimeError('Unexpected public ZIP content')
-              if hashlib.sha256(archive.read('launcher-v0.0.16.7z')).hexdigest() != cipher_sha:
+              if hashlib.sha256(archive.read('launcher-v0.0.17.7z')).hexdigest() != cipher_sha:
                   raise RuntimeError('Public ciphertext differs')
           def get_release():
               return json.loads(subprocess.check_output(['gh', 'api', f'repos/{repo}/releases/tags/v1.0.0']))
           def checked_release(release, require_new=False):
               if release['id'] != 400583482 or release.get('draft') is not False or release.get('tag_name') != 'v1.0.0':
                   raise RuntimeError('Live release identity differs')
+              for field, expected in manifest['preserved_release_metadata'].items():
+                  if release.get(field) != expected:
+                      raise RuntimeError('Preserved release metadata changed: ' + field)
               live = {a['name']: a for a in release['assets']}
               if len(live) != len(release['assets']):
                   raise RuntimeError('Duplicate live asset names')
@@ -118,19 +121,19 @@ jobs:
               if new_name in live:
                   remote = live[new_name]
                   if remote['size'] != new_bytes or remote.get('digest') != 'sha256:' + new_sha or remote.get('state') != 'uploaded':
-                      raise RuntimeError('The already present v16 resource differs')
+                      raise RuntimeError('The already present v17 resource differs')
               return live
           live = checked_release(get_release())
           if new_name not in live:
               # One upload attempt. A failure is reconciled on a later run, never blindly retried or overwritten.
               subprocess.run(['gh', 'release', 'upload', 'v1.0.0', str(out / new_name), '--repo', repo], check=True)
           final = checked_release(get_release(), require_new=True)
-          if len(final) != 18:
-              raise RuntimeError('Only the reviewed v16 overlay may have been added')
+          if len(final) != 19:
+              raise RuntimeError('Only the reviewed v17 overlay may have been added')
           with tempfile.TemporaryDirectory() as directory:
               subprocess.run(['gh', 'release', 'download', 'v1.0.0', '--repo', repo, '--pattern', new_name, '--dir', directory], check=True)
               downloaded = pathlib.Path(directory) / new_name
               if downloaded.stat().st_size != new_bytes or digest(downloaded) != new_sha:
                   raise RuntimeError('The actual published resource download differs')
           checked_release(get_release(), require_new=True)
-          print('Preserved all seventeen existing assets and verified the one new encrypted v0.0.16 resource.', flush=True)
+          print('Preserved all eighteen existing assets and verified the one new encrypted v0.0.17 resource.', flush=True)
