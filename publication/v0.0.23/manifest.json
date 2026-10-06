@@ -1,0 +1,225 @@
+{
+  "version": "0.0.23",
+  "repository": "danielpatillo/portable-assets-20260930",
+  "tag": "v1.0.0",
+  "release_id": 400583482,
+  "asset": {
+    "name": "launcher-resource-v0.0.23.zip",
+    "bytes": 38767080,
+    "sha256": "ffb70d1e3be870299fa5a2e9a0653ba9318605ec8357c6f094e07e74306dc47e",
+    "cipher_sha256": "6a5a2ee9244c35a1116d4cb6fe8834d16b6cca81b3d5018f9ba5a55b19663b58"
+  },
+  "preserved_assets": [
+    {
+      "name": "launcher-resource-v0.0.10.zip",
+      "id": 606683898,
+      "size": 35360678,
+      "digest": "sha256:38484968f1bcae8e94dfa50cae1fbd92ab15f4f204b3756172d83114f009180e",
+      "state": "uploaded",
+      "created_at": "2026-10-02T23:10:05Z",
+      "updated_at": "2026-10-02T23:10:06Z",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.10.zip"
+    },
+    {
+      "name": "launcher-resource-v0.0.11.zip",
+      "id": 607030323,
+      "size": 53877622,
+      "digest": "sha256:edd89248fa9b900760490f18fa50a2d26ccd2056c46c1750b0a7887b312d0f8c",
+      "state": "uploaded",
+      "created_at": "2026-10-03T03:10:07Z",
+      "updated_at": "2026-10-03T03:10:09Z",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.11.zip"
+    },
+    {
+      "name": "launcher-resource-v0.0.12.zip",
+      "id": 607281033,
+      "size": 27855046,
+      "digest": "sha256:8f5873e8fe566ff401da76ecfc3fd9fa7e679e3485bf98dfe79c713fa3593b74",
+      "state": "uploaded",
+      "created_at": "2026-10-03T06:21:27Z",
+      "updated_at": "2026-10-03T06:21:28Z",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.12.zip"
+    },
+    {
+      "name": "launcher-resource-v0.0.13.zip",
+      "id": 608119897,
+      "size": 27912854,
+      "digest": "sha256:ca34c282547a371d93740a7ed9c579c05d3f4b59298a0feccca0e70bd47be028",
+      "state": "uploaded",
+      "created_at": "2026-10-03T16:19:31Z",
+      "updated_at": "2026-10-03T16:19:33Z",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.13.zip"
+    },
+    {
+      "name": "launcher-resource-v0.0.14.zip",
+      "id": 609591961,
+      "size": 36073576,
+      "digest": "sha256:71ec41bd57f6d71b06be5e4e8df833860889bafda99727916a5e7f8327c10a9e",
+      "state": "uploaded",
+      "created_at": "2026-10-04T10:07:27Z",
+      "updated_at": "2026-10-04T10:07:29Z",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.14.zip"
+    },
+    {
+      "name": "launcher-resource-v0.0.15.zip",
+      "id": 610257314,
+      "size": 36079704,
+      "digest": "sha256:00d6215e5e61f27259a21ee37a9aa2d4119c7e0c43e37e297f00e9e0358ce403",
+      "state": "uploaded",
+      "created_at": "2026-10-04T17:18:11Z",
+      "updated_at": "2026-10-04T17:18:13Z",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.15.zip"
+    },
+    {
+      "name": "launcher-resource-v0.0.16.zip",
+      "id": 610523057,
+      "size": 36081080,
+      "digest": "sha256:0b2b8a9f31afb3cafc446603c7e52e3194da678de476e5bf04c04350dcdad464",
+      "state": "uploaded",
+      "created_at": "2026-10-04T19:46:37Z",
+      "updated_at": "2026-10-04T19:46:38Z",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.16.zip"
+    },
+    {
+      "name": "launcher-resource-v0.0.17.zip",
+      "id": 611647762,
+      "size": 36101720,
+      "digest": "sha256:54be5bef63196eb08ac686e80014e223de73dfe73fa72efaf953d66ccc3610c9",
+      "state": "uploaded",
+      "created_at": "2026-10-05T05:52:11Z",
+      "updated_at": "2026-10-05T05:52:13Z",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.17.zip"
+    },
+    {
+      "name": "launcher-resource-v0.0.22.zip",
+      "id": 614194208,
+      "size": 38738328,
+      "digest": "sha256:85fbfad45765f75d718d248b063de1aa35feb0413a9312e46abb07af5e4fef02",
+      "state": "uploaded",
+      "created_at": "2026-10-06T02:14:01Z",
+      "updated_at": "2026-10-06T02:14:02Z",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.22.zip"
+    },
+    {
+      "name": "launcher-resource-v0.0.7.zip",
+      "id": 605835224,
+      "size": 27812148,
+      "digest": "sha256:3e3d85da2a5289e45c2aee97c85c9fc9f7832c190de23194c4dca9ae57c3f7d4",
+      "state": "uploaded",
+      "created_at": "2026-10-02T14:57:03Z",
+      "updated_at": "2026-10-02T14:57:04Z",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.7.zip"
+    },
+    {
+      "name": "launcher-resource-v0.0.8.zip",
+      "id": 606266376,
+      "size": 27823444,
+      "digest": "sha256:e4f35696ed8a2ff3ff234085b38c6a60120691542da910a694be82e5ba797930",
+      "state": "uploaded",
+      "created_at": "2026-10-02T18:54:00Z",
+      "updated_at": "2026-10-02T18:54:02Z",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.8.zip"
+    },
+    {
+      "name": "launcher-resource-v0.0.9.zip",
+      "id": 606474311,
+      "size": 27852964,
+      "digest": "sha256:6418a48c11fd80a6bcad42307137164a922d304f66473af8cf055fe296313fa6",
+      "state": "uploaded",
+      "created_at": "2026-10-02T20:54:37Z",
+      "updated_at": "2026-10-02T20:54:38Z",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/launcher-resource-v0.0.9.zip"
+    },
+    {
+      "name": "portable-engine-v2-01.zip",
+      "id": 605835296,
+      "size": 90000126,
+      "digest": "sha256:54e85c25cf9a778876b4abf3ddc1b6eaeb749313ae2392f0fa99a558c19b4de7",
+      "state": "uploaded",
+      "created_at": "2026-10-02T14:57:05Z",
+      "updated_at": "2026-10-02T14:57:08Z",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-01.zip"
+    },
+    {
+      "name": "portable-engine-v2-02.zip",
+      "id": 605835415,
+      "size": 90000126,
+      "digest": "sha256:bb5128dbdfe1c5fb3768a70773d885aee25bf0393e4907df7246f6d66f3f81f1",
+      "state": "uploaded",
+      "created_at": "2026-10-02T14:57:08Z",
+      "updated_at": "2026-10-02T14:57:11Z",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-02.zip"
+    },
+    {
+      "name": "portable-engine-v2-03.zip",
+      "id": 605835570,
+      "size": 90000126,
+      "digest": "sha256:41eb5b925d6363cbe5492180f0f6984764553e70fbcd5ffbb7774d0e7af015a1",
+      "state": "uploaded",
+      "created_at": "2026-10-02T14:57:12Z",
+      "updated_at": "2026-10-02T14:57:15Z",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-03.zip"
+    },
+    {
+      "name": "portable-engine-v2-04.zip",
+      "id": 605835693,
+      "size": 90000126,
+      "digest": "sha256:01a4707850b1174428f0ed712c5e61963a9600ba01a5890752c37ace68d51ab6",
+      "state": "uploaded",
+      "created_at": "2026-10-02T14:57:15Z",
+      "updated_at": "2026-10-02T14:57:18Z",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-04.zip"
+    },
+    {
+      "name": "portable-engine-v2-05.zip",
+      "id": 605835847,
+      "size": 90000126,
+      "digest": "sha256:50f9674e652b9931407def0914ae8591c7ec88318fc81c00cb429374929b7751",
+      "state": "uploaded",
+      "created_at": "2026-10-02T14:57:19Z",
+      "updated_at": "2026-10-02T14:57:21Z",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-05.zip"
+    },
+    {
+      "name": "portable-engine-v2-06.zip",
+      "id": 605835965,
+      "size": 90000126,
+      "digest": "sha256:e977b89ad11ba20464a3b03a50567c7e8bf8d70921961ab820c98562a562878b",
+      "state": "uploaded",
+      "created_at": "2026-10-02T14:57:21Z",
+      "updated_at": "2026-10-02T14:57:24Z",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-06.zip"
+    },
+    {
+      "name": "portable-engine-v2-07.zip",
+      "id": 605836090,
+      "size": 90000126,
+      "digest": "sha256:fe10384de13ac90ff5ad2038738d700a7101d9487e7cacecb0b4325787f5acca",
+      "state": "uploaded",
+      "created_at": "2026-10-02T14:57:25Z",
+      "updated_at": "2026-10-02T14:57:27Z",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-07.zip"
+    },
+    {
+      "name": "portable-engine-v2-08.zip",
+      "id": 605836185,
+      "size": 48655987,
+      "digest": "sha256:e16a6fb03279286684bf48a774e2f39ad8dadcf288cdc14aacd1fe0746442045",
+      "state": "uploaded",
+      "created_at": "2026-10-02T14:57:28Z",
+      "updated_at": "2026-10-02T14:57:30Z",
+      "browser_download_url": "https://github.com/danielpatillo/portable-assets-20260930/releases/download/v1.0.0/portable-engine-v2-08.zip"
+    }
+  ],
+  "preserved_release_metadata": {
+    "id": 400583482,
+    "tag_name": "v1.0.0",
+    "target_commitish": "main",
+    "name": "Portable assets v1.0.0",
+    "body": "Encrypted portable distribution resources for Comfy + Swarm Launcher by arquinovatos.",
+    "draft": false,
+    "prerelease": false,
+    "created_at": "2026-10-01T00:25:27Z",
+    "published_at": "2026-10-01T01:47:59Z"
+  }
+}
