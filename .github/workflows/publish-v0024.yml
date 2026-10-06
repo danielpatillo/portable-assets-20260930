@@ -1,0 +1,85 @@
+name: Publish verified encrypted v0.0.24 resource
+on:
+  push:
+    branches: [main]
+    paths: ['publication/v0.0.24/manifest.json']
+permissions:
+  contents: write
+concurrency:
+  group: encrypted-portable-v0024
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Verify ciphertext and preserve every previous release asset
+        shell: python
+        run: |
+          import hashlib, json, os, pathlib, re, subprocess, tempfile, urllib.request, zipfile
+          repo, revision = os.environ['GITHUB_REPOSITORY'], os.environ['GITHUB_SHA']
+          if repo != 'danielpatillo/portable-assets-20260930' or not re.fullmatch('[a-f0-9]{40}', revision):
+              raise RuntimeError('Unexpected repository or revision')
+          def read_public(path):
+              url = f'https://raw.githubusercontent.com/{repo}/{revision}/{path}'
+              with urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent':'ARQUINOVATOS-v24-publication'}), timeout=120) as response:
+                  return response.read()
+          def digest(data): return hashlib.sha256(data).hexdigest()
+          raw_manifest = read_public('publication/v0.0.24/manifest.json')
+          if digest(raw_manifest) != '490dbcabb2705dbc99f3665ec6ba81a8fb92b87c1f28291887ac3b9832da919c':
+              raise RuntimeError('Reviewed final manifest differs')
+          manifest = json.loads(raw_manifest)
+          if manifest['version'] != '0.0.24' or manifest['repository'] != repo or manifest['release_id'] != 400583482 or manifest['tag'] != 'v1.0.0':
+              raise RuntimeError('Unexpected manifest identity')
+          asset = manifest['asset']
+          if asset['name'] != 'launcher-resource-v0.0.24.zip' or asset['sha256'] != '34ebc0bbdc4479b6fcb0a6fafa6eb0ae83334343c797b691e634e2fcb23f0003' or asset['bytes'] != 38769832:
+              raise RuntimeError('Unexpected resource identity')
+          baseline = manifest['preserved_assets']
+          if len(baseline) != 21 or len({a['name'] for a in baseline}) != 21 or len({a['id'] for a in baseline}) != 21:
+              raise RuntimeError('Unexpected baseline')
+          def check(require_new=False):
+              release = json.loads(subprocess.check_output(['gh','api',f'repos/{repo}/releases/tags/v1.0.0']))
+              if release['id'] != manifest['release_id'] or release['draft'] or release['prerelease']:
+                  raise RuntimeError('Release identity changed')
+              for key, expected_value in manifest['preserved_release_metadata'].items():
+                  if release.get(key) != expected_value:
+                      raise RuntimeError('Previous release metadata changed: '+key)
+              live = {a['name']:a for a in release['assets']}
+              if len(live) != len(release['assets']):
+                  raise RuntimeError('Duplicate release asset names')
+              expected = {a['name'] for a in baseline}
+              if set(live) not in (expected, expected | {asset['name']}):
+                  raise RuntimeError('Previous assets changed')
+              for original in baseline:
+                  if any(live[original['name']].get(k) != v for k,v in original.items()):
+                      raise RuntimeError('Previous asset identity changed')
+              if asset['name'] in live:
+                  current=live[asset['name']]
+                  if current['size'] != asset['bytes'] or current.get('digest') != 'sha256:'+asset['sha256'] or current['state'] != 'uploaded':
+                      raise RuntimeError('Existing candidate differs; preserve it for inspection')
+              elif require_new:
+                  raise RuntimeError('Candidate missing')
+              return live
+          with tempfile.TemporaryDirectory() as folder:
+              target=pathlib.Path(folder)/asset['name']
+              data=read_public('publication/v0.0.24/'+asset['name'])
+              if len(data)!=asset['bytes'] or digest(data)!=asset['sha256']:
+                  raise RuntimeError('Ciphertext does not match manifest')
+              target.write_bytes(data)
+              with zipfile.ZipFile(target) as archive:
+                  if len(archive.namelist())!=3 or set(archive.namelist())!={'launcher-v0.0.24.7z','7zip/x64/7za.exe','7zip/License.txt'}:
+                      raise RuntimeError('Unexpected public ZIP entries')
+                  if digest(archive.read('launcher-v0.0.24.7z'))!=asset['cipher_sha256']:
+                      raise RuntimeError('Ciphertext identity differs')
+              if asset['name'] not in check():
+                  subprocess.run(['gh','release','upload','v1.0.0',str(target),'--repo',repo],check=True)
+              live=check(True)
+              with urllib.request.urlopen(live[asset['name']]['browser_download_url'],timeout=120) as response:
+                  public=response.read()
+              if len(public)!=asset['bytes'] or digest(public)!=asset['sha256']:
+                  raise RuntimeError('Public download differs')
+              check(True)
+          print('Verified v0.0.24 published and publicly downloaded; all 21 previous assets preserved.')
+
